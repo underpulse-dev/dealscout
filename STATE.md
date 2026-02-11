@@ -4,12 +4,14 @@
 ## Status: READY
 ## Sessions Completed: 6
 
-## GitHub Repo: (pending — Serg creating dedicated account)
+## GitHub Repo: https://github.com/underpulse-dev/dealscout
+## Git Credentials: /root/.git-credentials (chmod 600, never committed)
 
 ## What To Do Next
 Phase 1 Step 1 - Sample Reports: ✅ COMPLETE (3 of 3 done)
 Phase 1 Step 2 - Landing page: ✅ COMPLETE
-- ⏭️ NEXT: Phase 1 Step 3 - Distribution test (needs GitHub repo + domain)
+- ⏭️ NEXT: Deploy to GitHub Pages → Serg reviews architecture/landing page/plan
+- ⚠️ Distribution POSTPONED — Serg wants to review everything before posting anywhere
 
 ## Last Session
 - Start: 2026-02-11T16:04:15Z
