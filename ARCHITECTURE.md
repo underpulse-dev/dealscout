@@ -1,693 +1,234 @@
-# DealScout MVP — Architecture & Technical Plan
+# DealScout — Architecture
 
-**Version:** 1.0  
-**Date:** 2026-02-10  
-**Status:** Draft (Awaiting Approval)
+## Product
 
----
+**DealScout** generates AI-powered pre-acquisition intelligence reports for small business buyers ($100K-$5M deals).
 
-## Executive Summary
-
-DealScout generates AI-powered pre-acquisition intelligence reports for small business buyers. Input: business name + location. Output: comprehensive PDF report covering reputation, competitive landscape, demographics, customer sentiment, and risk signals.
-
-**Core Value Prop:** Turn 20+ hours of due diligence research into a 5-minute AI report.
-
-**Target Market:** Individual buyers acquiring small businesses ($100K-$5M range).
-
-**Business Model:** 
-- Quick Scan: $49 (basic overview)
-- Full Report: $199 (comprehensive analysis)
-- Subscription: $99/mo (3 reports/month + updates)
-
-**Unit Economics:**
-- Cost per report: $1-3 (API calls, compute)
-- Gross margin: 95%+
-- Budget cap: $200 total for external services during MVP
+- **Input:** Business name + location
+- **Output:** Comprehensive PDF report (reputation, competition, demographics, risks)
+- **Value prop:** Turn 20+ hours of due diligence into a 5-minute AI report
+- **Positioning:** "The Carfax for business acquisitions"
 
 ---
 
-## System Architecture
+## Tech Stack
 
-### High-Level Flow
+| Layer | Choice | Rationale |
+|-------|--------|-----------|
+| **Language** | Python 3.11+ | Best ecosystem for scraping, LLM, PDF generation |
+| **Framework** | FastAPI | Async, fast, great docs |
+| **LLM** | Anthropic Claude Sonnet 4.5 | Best reasoning for structured analysis, 200K context |
+| **PDF** | WeasyPrint | HTML/CSS → PDF, Jinja2 templates, beautiful output |
+| **Frontend** | HTML/CSS/JS + Tailwind | No framework overhead for MVP |
+| **Payments** | Stripe Checkout | Industry standard, handles PCI compliance |
+| **Database** | SQLite (MVP) → PostgreSQL | Zero config to start, clear migration path |
+| **Hosting** | Hetzner | Cost-effective, Serg provides access |
+| **Email** | SendGrid (free tier) | 100/day sufficient for MVP |
+| **Browser automation** | Playwright + stealth | For scraping behind Cloudflare/JS walls |
+| **Task queue** | Celery + Redis | Async report generation, retry logic |
+| **Storage** | Cloudflare R2 (free 10GB) | PDF storage |
+
+---
+
+## System Flow
 
 ```
-User Input (Web Form)
+User Input (web form)
     ↓
-Payment (Stripe)
+Stripe Payment
     ↓
 Entity Resolution (Google Places API)
     ↓
-Data Collection Pipeline (parallel fetching)
-    ├─ Yelp Reviews & Ratings
-    ├─ Google Trends
-    ├─ Census/Demographics Data
-    ├─ Web Scraping (BBB, social media, news)
-    └─ Competitor Discovery
+Parallel Data Collection:
+    ├─ Yelp reviews/ratings
+    ├─ Google Trends (search interest)
+    ├─ Census/demographic data (free API)
+    ├─ Web scraping (BBB, news, social)
+    └─ Competitor discovery (nearby same-category)
     ↓
-LLM Analysis Layer (Claude)
-    ├─ Sentiment Analysis
-    ├─ Risk Detection
-    ├─ Competitive Positioning
-    └─ Market Opportunity Assessment
+LLM Analysis (Claude Sonnet 4.5):
+    ├─ Sentiment analysis
+    ├─ Risk detection
+    ├─ Competitive positioning
+    └─ Acquisition readiness score
     ↓
-Report Generation (PDF)
+Report Assembly → PDF (WeasyPrint)
     ↓
-Delivery (Email + Download Link)
-```
-
-### Tech Stack
-
-**Backend:**
-- **Language:** Python 3.11+
-- **Framework:** FastAPI (async, high performance, excellent docs)
-- **Task Queue:** Celery + Redis (async report generation)
-- **Database:** PostgreSQL (storing reports, user data, cache)
-- **Caching:** Redis (API responses, intermediate data)
-
-**Frontend:**
-- **Framework:** Simple HTML/CSS/JS (no React/Vue for MVP — keep it lean)
-- **Styling:** Tailwind CSS (via CDN for speed)
-- **Form handling:** HTMX for dynamic interactions without heavy JS
-
-**Infrastructure:**
-- **Hosting:** Railway.app or Render.com (free tier initially, easy scaling)
-- **Database:** Railway PostgreSQL or Supabase (generous free tier)
-- **Redis:** Railway Redis or Upstash (free tier)
-- **Storage:** S3-compatible (Cloudflare R2 free tier: 10GB)
-
-**Deployment:**
-- **Containerization:** Docker + docker-compose
-- **CI/CD:** GitHub Actions (free for public repos)
-
----
-
-## Data Collection Pipeline
-
-### 1. Entity Resolution
-**Goal:** Convert "Joe's Pizza, Brooklyn NY" → verified business entity with address, phone, website
-
-**Tool:** Google Places API
-- **Free tier:** $200/month credit (~40,000 requests)
-- **Fallback:** Yelp Fusion API (can also resolve entities)
-
-**Output:** Canonical business data
-```json
-{
-  "name": "Joe's Pizza",
-  "address": "123 Main St, Brooklyn, NY 11201",
-  "phone": "+1-718-555-0123",
-  "website": "https://joespizza.com",
-  "place_id": "ChIJ...",
-  "coordinates": {"lat": 40.7128, "lng": -73.9352},
-  "category": "Restaurant - Pizza",
-  "hours": {...}
-}
-```
-
-### 2. Review & Reputation Data
-**Source:** Yelp Fusion API
-- **Free tier:** 5,000 calls/day (plenty for MVP)
-- **Data collected:**
-  - Average rating & review count
-  - Recent reviews (last 3 months)
-  - Response rate to reviews
-  - Common keywords in reviews
-
-**Backup/Supplementary:** 
-- Google Places reviews (via Places API)
-- BBB rating (web scraping if available)
-
-### 3. Market & Demographics
-**Source:** US Census Bureau API (free, no key required)
-- **Data points:**
-  - Population density & trends
-  - Median household income
-  - Age distribution
-  - Education levels
-  - Industry employment stats
-
-**Supplementary:** 
-- Google Trends (pytrends library, free)
-  - Interest over time for business category
-  - Regional interest comparison
-  - Related queries
-
-### 4. Competitive Landscape
-**Approach:** 
-- Use Google Places API to find similar businesses in radius
-- Calculate competitive density
-- Compare ratings/review counts
-- Identify market gaps
-
-**Metrics:**
-- Number of competitors within 1mi/5mi/10mi
-- Average competitor rating
-- Market saturation index
-- Unique positioning opportunities
-
-### 5. Web Presence & Risk Signals
-**Scraping targets (respect robots.txt):**
-- Business website (if exists):
-  - Tech stack analysis
-  - SSL certificate validity
-  - Social media links
-  - Contact info consistency
-- News mentions (Google News search)
-- Legal records (if publicly available)
-- Social media presence (follower counts, engagement)
-
-**Risk signals to detect:**
-- BBB complaints or unresolved issues
-- Negative news coverage
-- Inconsistent information across platforms
-- Recent management changes
-- Legal disputes mentioned in reviews
-
----
-
-## LLM Analysis Layer
-
-### Model Choice: Claude 3.5 Sonnet (or Claude 4 Sonnet if available)
-**Reasoning:**
-- Best reasoning capabilities for nuanced analysis
-- 200K context window (can fit all collected data)
-- Strong at extracting insights from unstructured text
-- Anthropic SDK well-maintained for Python
-
-**Cost:** ~$0.50-1.50 per report (well within margin)
-
-### Analysis Modules
-
-#### 1. Sentiment Analysis
-**Input:** Reviews, social comments, news articles  
-**Output:**
-- Overall sentiment score (-1 to +1)
-- Sentiment trends over time
-- Key themes (positive/negative)
-- Customer pain points
-- Standout strengths
-
-**Prompt strategy:** Few-shot examples with structured output (JSON)
-
-#### 2. Risk Assessment
-**Input:** All collected data  
-**Output:**
-- Risk score (1-10)
-- Categorized risks:
-  - Financial (declining reviews, location issues)
-  - Operational (owner-dependent, key person risk)
-  - Legal/Regulatory (violations, complaints)
-  - Market (high competition, declining trends)
-- Red flags with severity ratings
-
-#### 3. Competitive Position Analysis
-**Input:** Competitor data, market trends, business data  
-**Output:**
-- Market positioning summary
-- Competitive advantages
-- Vulnerabilities vs competitors
-- Pricing position
-- Differentiation opportunities
-
-#### 4. Market Opportunity
-**Input:** Demographics, trends, competitive density  
-**Output:**
-- Growth potential score
-- Demographic fit analysis
-- Untapped opportunities
-- Market timing assessment
-
-### Prompt Architecture
-- Use structured prompts with XML tags
-- Request JSON output for programmatic parsing
-- Include examples in system prompt
-- Chain multiple specialized prompts rather than one mega-prompt
-- Cache static context (prompt templates) to reduce costs
-
----
-
-## Report Generation
-
-### PDF Structure
-
-**Page 1: Executive Summary**
-- Business overview (1-2 paragraphs)
-- Key metrics dashboard (ratings, reviews, competitors)
-- Overall assessment score (A-F grade)
-- 3-5 key findings (bullet points)
-
-**Page 2-3: Reputation & Customer Sentiment**
-- Review analysis (charts: rating over time, sentiment distribution)
-- Common themes from customers
-- Response quality assessment
-- Comparison to local competitors
-
-**Page 4: Market & Demographics**
-- Location demographics summary
-- Trends in the area
-- Customer base analysis
-- Foot traffic indicators (if applicable)
-
-**Page 5: Competitive Landscape**
-- Map of competitors
-- Competitive density metrics
-- Positioning matrix
-- Market gaps & opportunities
-
-**Page 6: Risk Assessment**
-- Risk score with breakdown
-- Detailed risk factors
-- Red flags (if any)
-- Mitigation recommendations
-
-**Page 7: Appendix**
-- Data sources & methodology
-- Limitations & disclaimers
-- Recommended next steps
-
-### PDF Generation Tool: **WeasyPrint**
-**Why WeasyPrint:**
-- Renders HTML/CSS to beautiful PDFs
-- Full CSS support (unlike ReportLab)
-- Easy templating with Jinja2
-- Free & open source
-
-**Alternative:** Playwright (headless browser screenshot to PDF)
-
-**Template approach:**
-- Jinja2 HTML templates
-- Tailwind CSS for styling
-- Chart.js or Plotly for data visualization
-- Professional design (reference Carfax/credit reports)
-
----
-
-## API Structure
-
-### REST API Endpoints
-
-```
-POST /api/reports/create
-Body: {
-  "business_name": "Joe's Pizza",
-  "location": "Brooklyn, NY",
-  "report_type": "full" | "quick",
-  "email": "buyer@example.com"
-}
-Response: {
-  "report_id": "rpt_abc123",
-  "status": "processing",
-  "estimated_time": 180
-}
-
-GET /api/reports/{report_id}/status
-Response: {
-  "report_id": "rpt_abc123",
-  "status": "processing" | "complete" | "failed",
-  "progress": 65,
-  "estimated_time_remaining": 60
-}
-
-GET /api/reports/{report_id}/download
-Response: PDF file or redirect to S3 URL
-
-POST /api/payments/checkout
-Body: {
-  "report_type": "full",
-  "business_name": "...",
-  "location": "..."
-}
-Response: {
-  "checkout_url": "https://checkout.stripe.com/..."
-}
-
-POST /api/webhooks/stripe
-(Stripe webhook handler to trigger report generation after payment)
-```
-
-### Internal Service Layer
-
-```python
-# services/entity_resolver.py
-async def resolve_business(name: str, location: str) -> BusinessEntity
-
-# services/data_collector.py
-async def collect_reviews(business: BusinessEntity) -> ReviewData
-async def collect_demographics(business: BusinessEntity) -> DemographicsData
-async def collect_competitors(business: BusinessEntity) -> CompetitorData
-async def collect_web_data(business: BusinessEntity) -> WebData
-
-# services/analyzer.py
-async def analyze_sentiment(reviews: ReviewData) -> SentimentAnalysis
-async def assess_risks(all_data: CollectedData) -> RiskAssessment
-async def analyze_competition(competitors: CompetitorData, business: BusinessEntity) -> CompetitiveAnalysis
-async def assess_opportunity(all_data: CollectedData) -> OpportunityAssessment
-
-# services/report_generator.py
-async def generate_report(analysis_results: AnalysisResults) -> bytes  # PDF
+Email Delivery (SendGrid) + Download Link
 ```
 
 ---
 
-## External Services & Free Tier Limits
+## Data Sources
 
-| Service | Purpose | Free Tier | Cost After | MVP Strategy |
-|---------|---------|-----------|------------|--------------|
-| **Google Places API** | Entity resolution, reviews | $200/mo credit (~40K requests) | $17/1000 after credit | Cache aggressively, use $200 credit |
-| **Yelp Fusion API** | Reviews, business data | 5,000 calls/day | N/A (no paid tier) | Primary review source |
-| **US Census API** | Demographics | Unlimited, free | Free | Use freely |
-| **Google Trends** | Market trends | Unlimited via pytrends | Free | Use freely |
-| **Anthropic Claude API** | LLM analysis | Pay-as-you-go, ~$3/1M tokens | ~$0.50-1.50/report | Only cost that scales with reports |
-| **Stripe** | Payments | Free + 2.9% + $0.30 per transaction | Same | Standard payment processing |
-| **Railway.app** | Hosting (backend + DB + Redis) | $5/mo credit | $0.000463/GB-hour | Start here, migrate if needed |
-| **Cloudflare R2** | PDF storage | 10GB free | $0.015/GB/mo | Plenty for MVP |
-| **Postmark/SendGrid** | Email delivery | 100/day (Postmark) / 100/day (SendGrid) | ~$15/mo for 40K | Start with SendGrid free |
+| Source | Purpose | Free Tier | Key Needed |
+|--------|---------|-----------|------------|
+| Google Places API | Entity resolution, reviews | $200/mo credit | YES |
+| Yelp Fusion API | Reviews, ratings, photos | 5,000 calls/day | YES (free) |
+| US Census API | Demographics by ZIP | Unlimited | NO |
+| Google Trends | Search interest trends | Unlimited (pytrends) | NO |
+| Web scraping | BBB, news, social media | Free (rate-limited) | NO |
+| Anthropic Claude | LLM analysis | Pay-per-token | YES |
 
-**Total estimated monthly cost (first 100 reports):**
-- API calls: ~$0 (within free tiers)
-- LLM analysis: ~$75 (100 reports × $0.75 avg)
-- Hosting: ~$5 (Railway credit covers)
-- Email: ~$0 (within free tier)
-- **Total: ~$80/mo** well under budget
-
-**At $199/report × 100 reports = $19,900 revenue**  
-**Margins: 99.6%** (excluding payment processing)
+**Cost per report:** ~$1-3 (API calls + LLM tokens) → **95%+ margin**
 
 ---
 
-## Database Schema
+## Report Types
+
+### Quick Scan ($100, beta $50)
+- Business overview + online reputation summary
+- Local market context + competition density
+- Key risk flags
+- **2-3 pages, <2 min generation**
+
+### Full Report ($400, beta $200)
+Everything in Quick Scan, plus:
+- Competitive landscape deep-dive
+- Customer sentiment analysis (themes, trends)
+- Demographic insights + target customer profile
+- Search interest trends
+- Risk signal analysis (BBB, news, legal)
+- Acquisition readiness score (0-100)
+- Due diligence checklist + questions for seller
+- **8-12 pages, <5 min generation**
+
+---
+
+## API Endpoints
+
+```
+POST /api/reports/create     → Start report generation (after payment)
+GET  /api/reports/:id/status → Poll progress
+GET  /api/reports/:id/download → Get PDF
+POST /api/payments/checkout  → Create Stripe session
+POST /api/webhooks/stripe    → Payment confirmation
+GET  /health                 → Health check
+```
+
+---
+
+## Project Structure
+
+```
+dealscout/
+├── app/
+│   ├── main.py                 # FastAPI entry point
+│   ├── api/
+│   │   ├── routes.py           # Report + payment endpoints
+│   │   └── webhooks.py         # Stripe webhooks
+│   ├── services/
+│   │   ├── entity_resolver.py  # Google Places lookup
+│   │   ├── yelp_client.py      # Yelp API
+│   │   ├── census_client.py    # Demographics
+│   │   ├── trends_client.py    # Google Trends
+│   │   ├── scraper.py          # BBB, news, social
+│   │   └── llm_analyzer.py     # Claude analysis
+│   ├── report/
+│   │   ├── builder.py          # Report assembly
+│   │   ├── pdf_generator.py    # WeasyPrint rendering
+│   │   └── templates/          # Jinja2 HTML templates
+│   ├── payment/
+│   │   └── stripe_client.py
+│   └── models/
+│       └── schemas.py          # Pydantic models
+├── tests/
+├── static/                     # Landing page assets
+├── templates/                  # Web page templates
+├── .env.example
+├── pyproject.toml
+├── Dockerfile
+└── README.md
+```
+
+---
+
+## Database Schema (MVP)
 
 ```sql
--- Users (future: for subscriptions)
-CREATE TABLE users (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  email VARCHAR(255) UNIQUE NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW(),
-  stripe_customer_id VARCHAR(255)
-);
-
--- Reports
 CREATE TABLE reports (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES users(id),
-  business_name VARCHAR(255) NOT NULL,
-  location VARCHAR(255) NOT NULL,
-  report_type VARCHAR(20) NOT NULL, -- 'quick' or 'full'
-  status VARCHAR(20) NOT NULL, -- 'pending', 'processing', 'complete', 'failed'
-  payment_status VARCHAR(20) NOT NULL, -- 'pending', 'paid', 'refunded'
-  stripe_payment_intent_id VARCHAR(255),
-  
-  -- Collected data (JSONB for flexibility)
-  raw_data JSONB,
-  analysis_results JSONB,
-  
-  -- Generated report
+  id TEXT PRIMARY KEY,
+  business_name TEXT NOT NULL,
+  location TEXT NOT NULL,
+  report_type TEXT NOT NULL,        -- 'quick' | 'full'
+  status TEXT NOT NULL,             -- 'pending' | 'processing' | 'complete' | 'failed'
+  payment_status TEXT NOT NULL,     -- 'pending' | 'paid' | 'refunded'
+  stripe_payment_intent_id TEXT,
+  raw_data JSON,
+  analysis_results JSON,
   pdf_url TEXT,
-  pdf_size_bytes INTEGER,
-  
-  -- Metadata
-  created_at TIMESTAMP DEFAULT NOW(),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   completed_at TIMESTAMP,
-  processing_time_seconds INTEGER,
-  error_message TEXT,
-  
-  -- Cost tracking
-  api_cost_cents INTEGER,
-  llm_cost_cents INTEGER
+  error_message TEXT
 );
 
--- API call cache (avoid redundant external API calls)
 CREATE TABLE api_cache (
-  cache_key VARCHAR(255) PRIMARY KEY,
-  service VARCHAR(50) NOT NULL, -- 'google_places', 'yelp', etc.
-  request_params JSONB NOT NULL,
-  response_data JSONB NOT NULL,
-  cached_at TIMESTAMP DEFAULT NOW(),
+  cache_key TEXT PRIMARY KEY,
+  service TEXT NOT NULL,
+  response_data JSON NOT NULL,
+  cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   expires_at TIMESTAMP NOT NULL
 );
-
-CREATE INDEX idx_api_cache_expires ON api_cache(expires_at);
-CREATE INDEX idx_reports_status ON reports(status, created_at);
-CREATE INDEX idx_reports_user ON reports(user_id, created_at);
 ```
 
 ---
 
-## Security & Compliance
+## LLM Analysis Strategy
 
-### Data Privacy
-- **No PII storage beyond email** (required for delivery)
-- Reports deleted after 30 days (configurable)
+Four separate Claude calls per Full Report (chained, not one mega-prompt):
+
+1. **Sentiment Analysis** — Input: top 20 reviews → themes, trends, pain points
+2. **Risk Assessment** — Input: all data → categorized risks with severity
+3. **Competitive Positioning** — Input: business + competitors → market position
+4. **Acquisition Readiness** — Input: all analysis → 0-100 score + justification
+
+Token budget: ~5K (Quick Scan), ~20K (Full Report) → $0.25-1.50/report
+
+---
+
+## Error Handling
+
+- **Critical source fails** (Google Places, Yelp): Retry 3x with backoff → fail + refund
+- **Non-critical fails** (Trends, BBB): Continue with disclaimer in report
+- **LLM errors**: Retry once, fallback to simpler prompt
+- **Rate limits**: Respect all API limits, cache aggressively (24h for reviews, 7d for demographics)
+
+---
+
+## Security
+
+- All API keys in environment variables (never in git)
+- No PII stored beyond email (for delivery)
 - Stripe handles payment data (PCI compliant)
-- SSL/TLS for all connections
-
-### Rate Limiting
-- **Public API:** 10 requests/min per IP
-- **Authenticated:** 100 requests/hour per user
-- Use Redis for rate limit tracking
-
-### Input Validation
-- Sanitize all user inputs
-- Validate business names (no SQL injection, XSS)
-- Limit location to US initially (Census data availability)
-
-### API Key Security
-- Store all keys in environment variables
-- Use Railway/Render secret management
-- Never commit keys to Git
-- Rotate keys periodically
+- SSL/TLS everywhere
+- Rate limiting: 10 req/min per IP (public), 100 req/hr (authenticated)
+- Reports auto-deleted after 30 days
 
 ---
 
-## Error Handling & Resilience
+## MVP Scope
 
-### Graceful Degradation
-If a data source fails:
-- **Critical (Google Places, Yelp):** Retry 3x with exponential backoff, then fail report with refund
-- **Non-critical (Trends, some demographics):** Continue report with disclaimer
-- **Scraping failures:** Note in report, don't fail entire process
+**Building:**
+- Landing page + checkout flow
+- Data pipeline (5 sources)
+- LLM analysis (4 modules)
+- PDF report generation
+- Email delivery
 
-### Monitoring & Alerts
-- **Health checks:** `/health` endpoint for uptime monitoring
-- **Error tracking:** Sentry (free tier: 5K events/mo)
-- **Logging:** Structured logs (JSON) to stdout, captured by Railway
-- **Alerts:** Email on critical failures (report failure rate >10%)
-
-### Retry Strategy
-- Use Celery with exponential backoff for task retries
-- Max 3 retries for external API calls
-- DLQ (dead letter queue) for failed reports
-
----
-
-## Development Workflow
-
-### Phase-by-Phase Timeline
-
-**Phase 1: Core Pipeline (Sessions 1-2, ~2 hours)**
-- Initialize project structure
-- Set up FastAPI + Docker
-- Implement entity resolution (Google Places)
-- Implement Yelp integration
-- Implement Census data fetching
-- Unit tests for each data source
-- Test with 5 real businesses
-
-**Phase 2: LLM Analysis (Sessions 3-4, ~2 hours)**
-- Design prompt templates
-- Implement sentiment analysis
-- Implement risk assessment
-- Implement competitive analysis
-- Implement opportunity assessment
-- Test end-to-end pipeline with real data
-
-**Phase 3: Report Generation (Session 5, ~1 hour)**
-- Design PDF template (HTML/CSS)
-- Implement WeasyPrint rendering
-- Generate sample reports
-- Refine design for readability
-
-**Phase 4: Web Frontend & Payment (Sessions 6-7, ~2 hours)**
-- Build landing page (conversion-optimized)
-- Input form with validation
-- Stripe Checkout integration
-- Webhook handler for payment confirmation
-- Email delivery (SendGrid)
-- Order confirmation page with download
-
-**Phase 5: Polish & Launch (Sessions 8-9, ~2 hours)**
-- End-to-end testing (10+ businesses)
-- Error handling refinement
-- Sample report for marketing
-- Deploy to production
-- Set up monitoring
-- Soft launch (SearchFunder post)
-
-**Total: ~9-10 hours of focused work**
-
-### Git Strategy
-- **Repo name:** `dealscout-mvp`
-- **Branches:** 
-  - `main` (production)
-  - `dev` (active development)
-  - Feature branches as needed
-- **Commit frequency:** Every logical unit of work (~30min)
-- **Commit message format:** `[Phase X] Brief description`
-
-### Testing Strategy
-- **Unit tests:** pytest for individual services
-- **Integration tests:** Test full pipeline with mocked APIs
-- **E2E tests:** Test with real businesses (manual initially)
-- **Coverage goal:** 70%+ for core services
+**NOT building (yet):**
+- User accounts / login
+- Dashboard
+- Report customization
+- White-label for brokers
+- International support
+- Mobile app
+- Partner API
 
 ---
 
-## Go-to-Market Strategy (Post-Launch)
+## Success Metrics (First 30 Days)
 
-### Initial Distribution Channels
-1. **SearchFunder community** (primary audience)
-   - Post: "We built an AI tool to automate pre-acquisition due diligence"
-   - Offer 50% discount to first 20 customers ($99 instead of $199)
-   - Gather feedback aggressively
-
-2. **BizBuySell forum**
-   - Similar approach to SearchFunder
-   - Value-first content: share sample report
-
-3. **SEO Content**
-   - Blog: "How to evaluate a small business before buying"
-   - "10 red flags when buying a restaurant"
-   - "Competitive analysis for [city] [industry]"
-
-4. **Cold outreach to brokers**
-   - Offer white-label reports
-   - Revenue share: $50/report they sell
-
-### Success Metrics (First 30 Days)
-- **10 paid reports** (validation)
-- **5+ pieces of qualitative feedback**
-- **<5% refund rate**
-- **<10min average report generation time**
-
-### Pricing Validation
-- Test $149 vs $199 for full report
-- Offer "Quick Scan" at $49 to capture price-sensitive buyers
-- Subscription at $99/mo if demand exists
-
----
-
-## Open Questions / Decisions Needed
-
-1. **Should we support non-US businesses in MVP?**
-   - Leaning NO: Census data is US-only, complicates entity resolution
-   - Can add later if demand exists
-
-2. **Report update frequency for subscribers?**
-   - Proposal: Weekly for active deals, monthly otherwise
-   - Track changes in reviews, trends, competitors
-
-3. **Refund policy?**
-   - Proposal: 100% refund if report fails to generate
-   - 50% refund if customer unsatisfied (within 48 hours)
-   - No refunds after 48 hours or if report downloaded
-
-4. **Sample report availability?**
-   - YES: Generate 2-3 sample reports for different business types
-   - Use for landing page, social proof, SEO
-
-5. **Branding: DealScout vs other names?**
-   - DealScout is solid (available .com for $12/year)
-   - Alternative: BizIntel, AcquisitionIQ, DueDilligenceAI
-   - Decision: Stick with DealScout unless Serg objects
-
----
-
-## Risk Mitigation
-
-### Technical Risks
-- **API rate limits:** Implement aggressive caching, monitor usage
-- **LLM hallucinations:** Use structured prompts, validate outputs, include disclaimers
-- **Report generation failures:** Graceful degradation, clear error messages, refunds
-
-### Business Risks
-- **Low conversion:** Offer free Quick Scan, improve landing page copy
-- **High refund rate:** Improve report quality, set clear expectations
-- **Negative feedback:** Iterate quickly, over-deliver on support
-
-### Financial Risks
-- **Unexpected API costs:** Set hard spending limits, monitor daily
-- **Payment fraud:** Use Stripe Radar (included), require email verification
-
----
-
-## Next Steps (Pending Approval)
-
-Once this plan is approved:
-1. Create GitHub repo: `dealscout-mvp`
-2. Initialize Python project structure
-3. Set up development environment (Docker, pre-commit hooks)
-4. Begin Phase 1: Entity resolution + Yelp integration
-5. Request API keys from Serg (Google Places, Yelp, Anthropic)
-
-**Estimated time to first working prototype:** 2-3 sessions (~3 hours)  
-**Estimated time to soft launch:** 8-9 sessions (~9 hours)
-
----
-
-## Appendix: Directory Structure
-
-```
-dealscout-mvp/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── main.py              # FastAPI app
-│   │   ├── routes/
-│   │   │   ├── reports.py
-│   │   │   ├── payments.py
-│   │   │   └── webhooks.py
-│   │   └── dependencies.py
-│   ├── services/
-│   │   ├── entity_resolver.py
-│   │   ├── data_collector.py
-│   │   ├── analyzer.py
-│   │   └── report_generator.py
-│   ├── models/
-│   │   ├── business.py
-│   │   ├── report.py
-│   │   └── analysis.py
-│   ├── integrations/
-│   │   ├── google_places.py
-│   │   ├── yelp.py
-│   │   ├── census.py
-│   │   ├── trends.py
-│   │   └── anthropic_client.py
-│   ├── templates/
-│   │   └── report.html          # Jinja2 template for PDF
-│   └── utils/
-│       ├── cache.py
-│       ├── logger.py
-│       └── validators.py
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── fixtures/
-├── frontend/
-│   ├── index.html               # Landing page
-│   ├── styles.css
-│   └── app.js
-├── docker-compose.yml
-├── Dockerfile
-├── pyproject.toml
-├── README.md
-└── .env.example
-```
-
----
-
-**END OF ARCHITECTURE DOCUMENT**
-
-Questions? Concerns? Modifications needed? Reply with feedback and I'll iterate before starting Phase 1.
+- 10 paid reports → validates demand
+- <5% refund rate → validates quality
+- <5 min report generation → validates technical
+- 5+ testimonials → social proof
