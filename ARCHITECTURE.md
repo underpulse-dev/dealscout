@@ -30,7 +30,7 @@
 
 ---
 
-## System Flow
+## System Flow (Deterministic Pipeline)
 
 ```
 User Input (web form)
@@ -39,23 +39,23 @@ Stripe Payment
     ↓
 Entity Resolution (Google Places API)
     ↓
-Parallel Data Collection:
+Parallel Data Collection (fixed steps, no agent):
     ├─ Yelp reviews/ratings
     ├─ Google Trends (search interest)
     ├─ Census/demographic data (free API)
     ├─ Web scraping (BBB, news, social)
     └─ Competitor discovery (nearby same-category)
     ↓
-LLM Analysis (Claude Sonnet 4.5):
-    ├─ Sentiment analysis
-    ├─ Risk detection
-    ├─ Competitive positioning
-    └─ Acquisition readiness score
+Single LLM Call (Claude Sonnet 4.5):
+    → All collected data in → Structured analysis JSON out
+    → Sentiment, risks, competition, readiness score
     ↓
-Report Assembly → PDF (WeasyPrint)
+Report Assembly → PDF (WeasyPrint + Jinja2)
     ↓
 Email Delivery (SendGrid) + Download Link
 ```
+
+**Why deterministic, not agentic:** Predictable cost/latency, easier to debug, sufficient for MVP. Agentic approach is a potential Phase 4+ upgrade once revenue justifies the engineering.
 
 ---
 

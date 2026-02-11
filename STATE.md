@@ -10,8 +10,9 @@
 ## What To Do Next
 Phase 1 Step 1 - Sample Reports: ✅ COMPLETE (3 of 3 done)
 Phase 1 Step 2 - Landing page: ✅ COMPLETE
-- ⏭️ NEXT: Deploy to GitHub Pages → Serg reviews architecture/landing page/plan
-- ⚠️ Distribution POSTPONED — Serg wants to review everything before posting anywhere
+- ⏭️ NEXT: Phase 1 Step 3 — Deploy landing page to live URL
+- Then: Phase 1 Steps 4-5 — Community posts + broker outreach (demand test)
+- See ROADMAP.md for full plan
 
 ## Last Session
 - Start: 2026-02-11T16:04:15Z
