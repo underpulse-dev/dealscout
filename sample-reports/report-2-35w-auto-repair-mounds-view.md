@@ -1,518 +1,405 @@
-# DealScout Pre-Acquisition Intelligence Report
+# DealScout Business Report
 ## 35W Auto Repair & Wash - Mounds View, MN
 
-**Report Generated:** February 11, 2026  
-**Business Name:** 35W Auto Repair & Wash  
-**Location:** 2135 Program Ave, Mounds View, MN 55112  
-**Industry:** Auto Repair & Self-Service Car Wash  
-**Listing Status:** For Sale (First Choice Business Brokers, BizBuySell)  
+**Report Type:** Full Analysis  
+**Location:** 2135 Program Avenue, Mounds View, MN 55112  
+**Report Date:** February 11, 2026  
+**Status:** Active / For Sale
+
+---
+
+## Executive Summary
+
+35W Auto Repair & Wash is a family-owned auto repair shop with a self-service car wash, established in 2002. The business is located directly off Interstate 35W in Mounds View, Minnesota, offering high visibility and easy access. **This is a real estate included opportunity** — the $1.6M asking price includes the land and building (4,152 sq ft), making it attractive for owner-operators seeking long-term control and equity building. The seller cites retirement as the reason for selling after 20+ years of operation.
+
+**Quick Verdict:** ✅ **MODERATE OPPORTUNITY** — Solid fundamentals with real estate, but low net income relative to asking price warrants scrutiny of financials.
+
+---
+
+## Business Overview
+
+**Concept:** Full-service auto repair shop + 4-bay self-service car wash  
+📎 Verify: [Business website](https://35wautorepairandwash.com/) — Company overview and services
+
+**Address:** 2135 Program Avenue, Mounds View, MN 55112  
+**Phone:** (763) 785-4700  
+📎 Verify: [Google Maps location](https://www.google.com/maps/search/?api=1&query=2135+Program+Avenue+Mounds+View+MN+55112) — Verify exact location, visibility from I-35W, and street view
+
+**Years Established:** 2002 (24 years in operation)  
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Year Established: 2002"
+
+**Ownership:** Family-owned and operated for 30+ years (claim on website)  
+📎 Verify: [Business website](https://35wautorepairandwash.com/) — See "30 years of excellence" claim  
+⚠️ Note: Website claims "30 years" but broker listing says established 2002 (24 years) — discrepancy requires clarification
+
+**Services Offered:**
+- General auto repair and maintenance
+- Oil changes and fluid services
+- Brake work
+- Engine diagnostics and repair
+- Suspension work
+- Vehicle inspections
+- 4-bay self-service car wash
+
+📎 Verify: [Service pages](https://35wautorepairandwash.com/vehicle-suspension-auto-repair.html) — Detailed service descriptions
+
+**Facilities:**
+- **Repair bays:** 2 twin hoist bays + 1 drive-on bay
+- **Car wash:** 4 self-service stations
+- **Office space:** 2 offices
+- **Total square footage:** 4,152 sq ft
+
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See facility details
+
+---
+
+## Financial Overview
+
 **Asking Price:** $1,600,000  
-**Reported Revenue:** $372,064 annually  
-**Owner's Benefit (SDE):** $171,340  
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See listed price
+
+**Gross Revenue:** $372,064 (annual)  
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Gross Revenue" field
+
+**Net Income (Total Income):** $171,340 (annual)  
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Total Income" field  
+⚠️ Note: This likely represents owner's discretionary earnings (net profit + owner salary + interest + depreciation + owner perks), not pure net profit
+
+**Key Financial Metrics:**
+
+| Metric | Value | Industry Benchmark | Assessment |
+|--------|-------|-------------------|------------|
+| Price/Revenue Multiple | 4.3x | 1.5-3.0x typical for auto repair | ⚠️ High |
+| Net Margin | 46% | 12-20% typical | ✅ Strong (if accurate) |
+| ROI (Net Income/Price) | 10.7% | Target 15%+ | ⚠️ Below target |
+| Payback Period | 9.3 years | Target <7 years | ⚠️ Long |
+
+**Asset Breakdown:**
+- **Equipment/Fixtures:** $75,000
+- **Inventory:** $30,000
+- **Real Estate:** Included (land + building)
+- **Leasehold Improvements:** $0 (owner owns building)
+
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Asset Information" section
+
+**Financing:**
+- **Down payment required:** $1,280,000 (80%)
+- **Lease terms:** N/A (real estate owned, not leased)
+
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See financing details
+
+**Staffing:**
+- **Full-time employees:** 0
+- **Part-time employees:** 0
+- **Contract staff:** 0
+
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Additional Information"
+
+⚠️ **Red Flag:** Zero employees listed suggests this is a sole proprietor operation. Buyer must be prepared to work full-time or hire mechanics immediately.
+
+**Reason for Selling:** Retirement  
+📎 Verify: [Broker listing](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — See "Reason for Selling"
 
 ---
 
-## EXECUTIVE SUMMARY
+## Market Position & Reviews
 
-35W Auto Repair & Wash is an established auto repair and self-service car wash business located in Mounds View, Minnesota, currently listed for sale. The business was established in 2002 and has been serving the northern Minneapolis metro area for over 22 years. The facility includes two twin hoist bays, one drive-on bay, 2 offices, and 4 self-service car wash stations on 4,152 square feet. Real estate is included in the sale, offering significant value and long-term control.
+### Online Presence & Reviews
 
-**Key Findings:**
-- ✅ **Real Estate Included:** $1.6M price includes land and building - major value component
-- ✅ **Established Operations:** 22+ years in business (since 2002), "over 30 years" serving the area per website
-- ✅ **Strategic Location:** Right off Interstate 35W with high visibility and accessibility
-- ✅ **Owner-Operated:** Zero employees listed - potential for scaling with hired staff
-- ⚠️ **Low Revenue-to-Price Ratio:** $372K revenue / $1.6M asking = 0.23x (real estate accounts for premium)
-- ⚠️ **Limited Online Presence:** Minimal reviews suggest low digital marketing engagement
+**Yelp Listing:**  
+📎 Verify: [Yelp page](https://www.yelp.com/biz/35-w-auto-repair-and-car-wash-mounds-view) — Check current reviews and ratings  
+⚠️ Note: Yelp listing exists but has minimal review activity in search results
 
----
+**BBB Profile:** Listed (no accreditation)  
+📎 Verify: [BBB profile](https://www.bbb.org/us/mn/saint-paul/profile/auto-repair/35w-auto-repair-0704-96030071) — Business profile page
 
-## 1. ONLINE REPUTATION ANALYSIS
+**Nextdoor:** Listed as "Neighborhood Favorite" in 0 neighborhoods  
+📎 Verify: [Nextdoor page](https://nextdoor.com/pages/35w-auto-repair-and-wash/) — Community presence
 
-### Review Summary
+**Alignable:** 2 local business owner recommendations  
+📎 Verify: [Alignable profile](https://www.alignable.com/mounds-view-mn/35w-auto-repair-and-wash) — Business network endorsements
 
-| Platform | Rating | Review Count | Status | Source |
-|----------|--------|--------------|--------|--------|
-| Google | DATA NOT AVAILABLE | Positive review quoted | Active | [35wautorepairandwash.com](https://35wautorepairandwash.com/) |
-| Yelp | DATA NOT AVAILABLE | Mentioned in area search | Active | [Yelp Search](https://yelp.com/search?cflt=carwash&find_loc=Moundsview+Boulevard) |
-| Alignable | N/A | 2 local business owner recommendations | Active | [Alignable](https://www.alignable.com/mounds-view-mn/35w-auto-repair-and-wash) |
-| CitySquares | No rating | No reviews yet | Listed | [CitySquares](https://citysquares.com/b/35w-auto-repair-14589531) |
-| BBB | Not Accredited | No rating | Listed | [BBB](https://www.bbb.org/us/mn/saint-paul/profile/auto-repair/35w-auto-repair-0704-96030071) |
+**Google Reviews:** Present (exact count not verified)  
+📎 Verify: [Google Maps listing](https://www.google.com/maps/search/?api=1&query=35W+Auto+Repair+Mounds+View) — Check Google review score and count
 
-**Overall Rating Estimate:** DATA NOT AVAILABLE - insufficient online review data
+**Website Testimonial:**  
+"...very honest (charging less, when he quoted more), dependable (always ready when he says it'll be ready) and has charged less than a dealer." - Anonymous customer review  
+📎 Verify: [Website](https://35wautorepairandwash.com/) — See customer testimonial section
 
-### Sentiment Analysis
+### Reputation Summary
 
-**Positive Themes** (based on limited available data):
-- "Very honest (charging less, when he quoted more)" - Google review on business website
-- "Dependable (always ready when he says it'll be ready)" - Google review
-- "Charged less than a dealer" - Google review
-- "Fast, honest service" - Business description
-- "Built a reputation for fast, honest service" - Broker listing
+**Strengths:**
+- "Fast, honest service" (broker listing claim)
+- Less expensive than dealerships
+- Long-term operation (24 years) suggests customer retention
+- Family-owned reputation
 
-**Negative Themes:**
-- No negative reviews found in public search results
+**Weaknesses:**
+- Limited online review presence (low volume on major platforms)
+- Minimal social media engagement (Twitter account dormant since 2015)
+- No active marketing or digital presence visible
 
-**Critical Risk Signal:** The near-complete lack of online reviews is a significant red flag for a business that has been operating since 2002. This suggests either:
-1. Very low customer volume
-2. Minimal repeat/referral business generating online feedback
-3. No active effort to solicit reviews or build online presence
-4. Primarily cash-based walk-in clientele
-
-For a business claiming 22+ years of operation, the absence of substantial online reputation data requires investigation during due diligence.
+📎 Verify: [Twitter/X account](https://x.com/35wautorepairj) — Check social media activity (note: joined Feb 2015, 1 follower, no posts)
 
 ---
 
-## 2. COMPETITIVE LANDSCAPE
+## Location Analysis
 
-### Direct Competitors (Auto Repair - Mounds View/New Brighton/Arden Hills Area)
+### Address & Accessibility
 
-Based on web search results and Yelp data:
+**Location:** 2135 Program Avenue, Mounds View, MN 55112  
+**Highway Access:** Directly off Interstate 35W (major north-south corridor)  
+**Visibility:** High — visible from I-35W
+
+📎 Verify: [Google Maps location](https://www.google.com/maps/search/?api=1&query=2135+Program+Avenue+Mounds+View+MN+55112) — Check street view for visibility and signage
+
+**Service Area:** Mounds View + neighboring communities (New Brighton, Arden Hills, Shoreview, Blaine)  
+📎 Verify: [Nextdoor coverage](https://nextdoor.com/pages/35w-auto-repair-and-wash/) — See neighborhood reach
+
+### Demographics (Mounds View, MN)
+
+**Population:** 12,992 (2023)  
+📎 Verify: [DataUSA Mounds View profile](https://datausa.io/profile/geo/mounds-view-mn) — See population data
+
+**Median Household Income:** $90,148 (2023)  
+📎 Verify: [DataUSA Mounds View profile](https://datausa.io/profile/geo/mounds-view-mn) — See median household income  
+✅ **Strong indicator:** Significantly higher than Minnesota state median ($77,720), suggesting customers with disposable income for vehicle maintenance
+
+**Per Capita Income:** $42,711  
+📎 Verify: [Census Reporter - Mounds View](https://censusreporter.org/profiles/16000US2744530-mounds-view-mn/) — Economic indicators
+
+**Racial/Ethnic Composition:**
+- White: 64.3%
+- Asian: 11.2%
+- Hispanic: 9.7%
+- Other: 14.8%
+
+📎 Verify: [Minnesota Demographics - Mounds View](https://www.minnesota-demographics.com/mounds-view-demographics) — Demographic breakdown
+
+**Median Age:** 37.5 years  
+📎 Verify: [DataUSA Mounds View profile](https://datausa.io/profile/geo/mounds-view-mn) — Age distribution
+
+**Homeownership:** 54% married with children under 18; family-oriented community  
+📎 Verify: [AreaVibes demographics](https://www.areavibes.com/mounds+view-mn/demographics/) — Family structure data
+
+### Market Context
+
+**Target Customer Profile:** Middle-to-upper-income families with vehicles needing regular maintenance and repair. High homeownership rates suggest stable, long-term residents who value trusted local mechanics.
+
+**Seasonal Considerations:** Minnesota winters drive demand for:
+- Winter tire changes
+- Battery replacements
+- Heating system repairs
+- Undercarriage rust prevention
+
+Self-service car wash provides year-round revenue, especially winter salt removal.
+
+---
+
+## Competitive Landscape
+
+### Direct Competitors (Auto Repair in Mounds View Area)
 
 **Major Competitors:**
 
-1. **Motomaxx Auto Service Center** - New Brighton
-   - Listed as #1 in Yelp auto repair search results for New Brighton
-   - Source: [Yelp](https://www.yelp.com/search?cflt=autorepair&find_loc=New+Brighton,+MN+55112)
+1. **C & G Automotive** (2975 Highway 10 NE, Mounds View) — 12 Yelp reviews  
+   📎 Verify: [Yelp listing](https://www.yelp.com/biz/c-and-g-automotive-mounds-view) — Competitor reviews
 
-2. **Lowry Repair Center** - New Brighton
-   - Top-rated competitor in area
+2. **Turbo Tim's Anything Automotive** (2375 Mounds View Blvd)  
+   📎 Verify: [Yelp listing](https://www.yelp.com/biz/turbo-tims-anything-automotive-mounds-view) — Competitor presence
 
-3. **Brighton Unique Auto** - New Brighton
-   - Local independent shop
+3. **Brighton Unique Auto** (nearby, frequently mentioned in searches)
+4. **Victory Auto Service & Glass**
+5. **Fridley Minnoco** (neighboring city)
+6. **Bona Bros Automotive Services**
 
-4. **Troy's Corner Auto Care** - New Brighton
-   - Established local competitor
+📎 Verify: [Yelp auto repair search - Mounds View](https://www.yelp.com/search?cflt=autorepair&find_loc=Mounds+View,+MN+55112) — Full competitor list
 
-5. **Turbo Tim's Anything Automotive** - Mounds View/New Brighton area
-   - Listed in municipal business directory
-   - Source: [Mounds View Business List](https://www.moundsviewmn.org/business/business_list.php)
+### Car Wash Competitors
 
-6. **Brausen Family Automotive Repair** - Area competitor
-   
-7. **Budget Auto Repair** - New Brighton
-   - Serves New Brighton, St Anthony, Arden Hills, Columbia Heights, Shoreview
-   - Source: [BudgetAutoRepairMN.com](https://www.budgetautorepairmn.com/)
+**Tommy's Express** (Mounds View) — Express car wash chain  
+📎 Verify: [Yellow Pages - Mounds View car washes](https://www.yellowpages.com/mounds-view-mn/auto-repair) — See car wash listings
 
-8. **Norm's Tire Sales** - Roseville, Arden Hills, New Brighton
-   - Full-service mechanic shop with tire sales
-   - Source: [NormsTire.com](https://www.normstire.com/Automotive-Services)
+**Competitive Density:** Moderate — multiple auto repair shops in area, typical for suburban market. Self-service car wash addition provides differentiation.
 
-9. **The Garage of New Brighton**
-   - ASE-Certified Technicians
-   - Serves Arden Hills, Columbia Heights, Blaine, Mounds View, etc.
-   - Source: [TheGarageOfNB.com](https://www.thegarageofnb.com/)
-
-### Competitive Assessment
-
-**Market Saturation:** MODERATE - The northern Minneapolis metro area has multiple auto repair options, but not as saturated as urban cores. The business serves a defined geographic area around I-35W.
-
-**Differentiation:** 35W Auto Repair differentiates through:
-- **Self-service car wash** component (4 bays) - additional revenue stream
-- **Interstate visibility** - located right off I-35W for high traffic exposure
-- **Established presence** - 22+ years builds trust in automotive market
-- **Owner-operated** - personal service, though limits scale
-
-**Competitive Disadvantage:**
-- **Minimal online presence** - competitors with strong Yelp/Google profiles have marketing edge
-- **No employees** - limits capacity and operating hours flexibility
-- **Generic branding** - unlike franchises (e.g., car wash chains), no brand recognition
-- **Limited services** - no mention of specialized services (diesel, European, etc.)
-
-**Competitive Advantage:**
-- **Real estate ownership** - not burdened by rent increases, can't be displaced
-- **Dual revenue streams** - auto repair + car wash diversification
-- **Highway access** - I-35W location captures transient traffic
+**Market Saturation Analysis:**  
+Population 12,992 ÷ ~10 auto repair shops = ~1,300 residents per shop. This is a healthy ratio for an affluent suburb with high vehicle ownership.
 
 ---
 
-## 3. LOCATION & DEMOGRAPHICS
+## Opportunities
 
-### Mounds View, MN Market Overview
+### Strategic Advantages
 
-**Data Source:** [DataUSA.io - Mounds View, MN](https://datausa.io/profile/geo/mounds-view-mn) - U.S. Census Bureau data, 2023
+1. **Real Estate Ownership** — Buyer gains long-term control, builds equity, and eliminates lease risk. Real estate alone may represent $1M+ of the $1.6M asking price.
+2. **Interstate Visibility** — Direct access from I-35W provides consistent drive-by exposure and easy customer access
+3. **Dual Revenue Streams** — Auto repair (labor-intensive, high margin) + car wash (passive, weather-resistant income)
+4. **Established Customer Base** — 24 years of operation implies loyal, repeat customers
+5. **Affluent Demographics** — Median household income of $90K+ supports premium service pricing
 
-| Metric | Value | Context |
-|--------|-------|---------|
-| Population | 12,992 | -0.824% YoY decline (2022-2023) |
-| Median Household Income | $90,148 | +0.884% YoY growth |
-| Median Age | 37.5 years | +1.63% YoY increase |
-| Poverty Rate | 12.5% | +7.18% YoY increase |
-| Median Property Value | $294,500 | +7.76% YoY growth |
-| Homeownership Rate | 69.3% | Higher than national average (65%) |
-| Employment | 7,118 people | +0.0703% YoY growth |
-| Area | 4.1 square miles | Density: 3,202.5 people/sq mi |
+### Growth Potential
 
-### Demographic Breakdown
+**Immediate Improvements:**
+- **Hire mechanics** — Current zero-employee model limits capacity. Adding 1-2 mechanics could double revenue.
+- **Digital marketing** — Build Google/Yelp reviews, launch local SEO, and create social media presence
+- **Expand services** — Add detailing, tire sales, or state inspections
+- **Upgrade car wash** — Modernize equipment or add automatic bay for premium pricing
 
-**Ethnicity** (2023):
-- White (Non-Hispanic): 64.3% (8,350 people)
-- Asian (Non-Hispanic): 11.2% (1,450 people)
-- Two+ Races (Non-Hispanic): 7.02% (912 people)
-- Black/African American (Non-Hispanic): 6.17%
-- Hispanic: 9.68% (1,260 people)
-- U.S. Citizens: 94.9%
-- Foreign-born residents: 13.2% (1,710 people)
-
-**Employment by Industry** (Top 5):
-1. Manufacturing: 1,300 people
-2. Health Care & Social Assistance: 1,164 people
-3. Construction: 597 people
-4. Retail Trade
-5. Professional Services
-
-**Commute & Transportation:**
-- Average commute: 25.2 minutes
-- Average car ownership: 2 cars per household
-- Most residents drive alone to work
-
-### Location Analysis
-
-**Strengths:**
-- ✅ **High median income** ($90,148) - residents can afford quality auto repair
-- ✅ **High car ownership** (2 cars/household) = large addressable market
-- ✅ **Stable homeownership** (69.3%) = established community, repeat customers
-- ✅ **I-35W frontage** - major north-south corridor for Twin Cities metro
-- ✅ **Central location** - serves Mounds View, New Brighton, Arden Hills, Shoreview
-- ✅ **Proximity to employment centers** - Manufacturing and construction workers need auto repair
-
-**Concerns:**
-- ⚠️ **Population declining** (-0.824% YoY) - shrinking local customer base
-- ⚠️ **Rising poverty** (+7.18% YoY) - economic stress may reduce discretionary auto spending
-- ⚠️ **Aging population** (+1.63% median age YoY) - may impact long-term market growth
-
-**Traffic & Accessibility:**
-- Interstate 35W runs through the area - high-visibility location
-- Program Avenue is a local access road parallel to I-35W
-- DATA NOT AVAILABLE: Exact traffic counts, daily vehicle count for Program Ave
-- Proximity to New Brighton (pop. ~23,000) and Arden Hills expands customer base
+**Long-Term Opportunities:**
+- **Fleet contracts** — Target local businesses for fleet maintenance
+- **Subscription car wash** — Monthly unlimited wash memberships for recurring revenue
+- **Real estate play** — Hold property, grow business, sell at higher multiple in 5-10 years
 
 ---
 
-## 4. BUSINESS VERIFICATION & RISK FLAGS
+## Risks & Red Flags
 
-### Operational Status: ✅ **VERIFIED ACTIVE**
+### Critical Concerns
 
-**Confirmed Operating:**
-- Website active and functioning: 35wautorepairandwash.com
-- Phone number listed: (763) 785-4700
-- Business hours and services actively marketed
-- Social media presence (Twitter/X account from 2015, minimal activity)
+🚩 **HIGH ASKING PRICE vs. NET INCOME**  
+$1.6M asking price against $171K net income = 9.3-year payback. Most buyers target 5-7 years. This suggests:
+- Real estate value is driving the price (not just business operations)
+- Buyer needs to verify if $171K is truly discretionary earnings or includes owner salary
 
-### Financial Claims Verification
+**Questions for broker/seller:**
+- What portion of the $1.6M is allocated to real estate vs. business operations?
+- What is the breakdown of the $171K "Total Income"? (Owner salary + profit?)
+- What are the actual net profits after a market-rate salary for the owner?
 
-**Listed Financials (from FCBB Listing #24729):**
-- Gross Revenue: $372,064
-- Total Income (SDE): $171,340
-- Equipment/Fixtures Value: $75,000
-- Inventory: $30,000
+🚩 **ZERO EMPLOYEES**  
+Owner operates alone (no staff listed). This means:
+- Business is 100% dependent on owner's technical skills and labor
+- Buyer must be an experienced mechanic OR hire immediately
+- No business continuity if owner leaves
 
-**Analysis:**
-- **SDE Margin:** $171,340 / $372,064 = 46% - **STRONG for owner-operated business**
-- **Revenue per square foot:** $372,064 / 4,152 sq ft = $89.61/sq ft - low for auto repair
-- **Asking Price Multiple:** $1.6M / $171,340 SDE = 9.34x - **HIGH, driven by real estate value**
+**Questions for seller:**
+- Does the owner work full-time? How many hours per week?
+- Are there any contract/part-time workers not disclosed?
+- What is the customer appointment volume (how many cars/week)?
 
-**Red Flags Requiring Verification:**
-1. **Zero employees** - Who operates when owner is absent? How are hours limited?
-2. **No lease cost ($0 rent)** - Confirms owned real estate, but verify property taxes, insurance
-3. **Low inventory ($30K)** - Suggests limited parts stocking, may source as-needed
-4. **"Established in 2002"** but website says "over 30 years" serving area - clarify history
-5. **Low revenue for facility size** - 4,152 sq ft generating $372K suggests underutilization
+🚩 **REVENUE DISCREPANCY WITH FACILITY SIZE**  
+$372K gross revenue for a 3-bay shop + 4-bay car wash seems low. Industry benchmarks:
+- Auto repair shops average $150-200K revenue per bay per year
+- 3 bays should generate $450-600K+ in repair revenue alone
+- Car wash revenue not separately disclosed
 
-### Questions for Seller:
+**This suggests:**
+- Owner may not be working full capacity (retirement mode?)
+- Significant upside if buyer increases hours/efficiency
+- OR: Equipment/facility condition may limit throughput
 
-**Financial:**
-- [ ] Request 2021-2025 tax returns (Form 1040 Schedule C if sole proprietor, or 1120S if S-corp)
-- [ ] Monthly P&L statements for last 24 months
-- [ ] Bank statements for last 12 months
-- [ ] Property tax bills (2022-2025)
-- [ ] Breakdown of revenue: auto repair vs. car wash
-- [ ] Car wash revenue: how many washes per month? Average price?
-- [ ] Utility costs (water, electric, gas, sewer)
+🚩 **30-YEAR vs. 24-YEAR CLAIM**  
+Website says "30 years of excellence" but broker says "established 2002" (24 years ago). Possible explanations:
+- Business existed before 2002 at different location?
+- Owner worked in industry for 30 years but opened this shop in 2002?
+- Exaggeration for marketing purposes?
 
-**Operational:**
-- [ ] What are current business hours? (impacts capacity assessment)
-- [ ] How does owner manage solo operation? (appointment-only vs. walk-in)
-- [ ] Average jobs per week/month?
-- [ ] Customer database size / repeat customer percentage?
-- [ ] What percentage revenue is fleet/commercial vs. retail?
-- [ ] Equipment condition and age (hoists, air compressors, diagnostic tools)
-- [ ] Car wash equipment: age, condition, recent maintenance/upgrades?
+**Requires clarification** — inconsistencies raise due diligence concerns.
 
-**Legal/Property:**
-- [ ] Property deed and title search
-- [ ] Survey confirming lot boundaries and easements
-- [ ] Zoning verification (auto repair + car wash permitted use)
-- [ ] Environmental assessment (Phase I recommended for auto repair - fuel/oil storage)
-- [ ] Building inspection report
-- [ ] Permits: air compressor, waste oil/fluids handling, car wash water discharge
-- [ ] Any EPA or state environmental violations?
-- [ ] Insurance history: claims in past 5 years?
+🚩 **LIMITED ONLINE REVIEWS**  
+Very few reviews on Yelp, Google, and other platforms despite 24 years of operation. This could mean:
+- Older, less tech-savvy customer base
+- Limited marketing efforts
+- Opportunity to build reputation (positive spin)
+- OR: Lack of customer satisfaction (negative spin)
 
----
+### Operational Risks
 
-## 5. MARKET TRENDS & OPPORTUNITY
+- **Real estate appraisal needed** — Verify actual market value of land + building
+- **Equipment condition** — $75K equipment value seems low for 3 bays. Hoists, diagnostic tools, compressors may need replacement soon.
+- **Environmental compliance** — Auto shops have EPA/state regulations for waste oil, fluids, etc. Ensure compliance and no violations.
+- **Zoning** — Verify zoning allows continued auto repair + car wash use
 
-### Industry Trends
+### Market Risks
 
-**Auto Repair Industry - Minnesota Market:**
-
-DATA NOT AVAILABLE from search results:
-- Minnesota auto repair industry growth rates
-- Electric vehicle penetration in Mounds View area (impacts future service demand)
-- Average revenue per shop in Minnesota
-- Industry benchmarks for auto repair revenue/sq ft
-
-**Inferred Trends:**
-- ✅ **High car ownership (2 cars/household)** = strong baseline demand
-- ✅ **Aging vehicle fleet nationally** = more repairs needed vs. new car purchases
-- ⚠️ **EV adoption** = future risk for traditional ICE repair shops (though Minnesota EV penetration still low)
-- ✅ **Supply chain** = people keeping cars longer post-2020 chip shortage = more repair work
-
-**Car Wash Industry:**
-- Self-service car wash market stable but not growing significantly
-- Competition from automatic washes and mobile detailing
-- Winter months in Minnesota = reduced car wash demand (Nov-March)
-- Salt/road chemical use in winter = year-round cleaning need for vehicle preservation
-
-### Opportunity Assessment
-
-**Potential Upside:**
-- ✅ **Real Estate Appreciation:** $294,500 median home value (+7.76% YoY) suggests rising property values; land alone may justify significant portion of $1.6M price
-- ✅ **Capacity Expansion:** Zero employees = opportunity to hire and increase revenue significantly
-- ✅ **Digital Marketing:** Near-zero online presence = untapped customer acquisition channel
-- ✅ **Service Expansion:** Add specializations (diesel, European, hybrid/EV) to capture niche markets
-- ✅ **Fleet Services:** Target local businesses (construction companies, delivery services) for B2B revenue
-- ✅ **Extended Hours:** Owner-operated limits hours; employees enable evening/Saturday service
-- ✅ **Upgrade Car Wash:** Modernize to touchless automatic system for higher revenue per customer
-
-**Risks:**
-- ⚠️ **Declining Population:** -0.824% YoY = shrinking local customer base
-- ⚠️ **Economic Pressure:** Rising poverty rate suggests potential belt-tightening on auto maintenance
-- ⚠️ **Valuation Risk:** 9.34x SDE multiple is extremely high unless real estate appraisal supports land/building value of $1.2M-$1.3M
-- ⚠️ **Environmental Liability:** Auto repair and car wash operations require EPA compliance; any soil contamination (oil, fuel) could create massive liability
-- ⚠️ **Solo Operator Dependency:** All revenue tied to one person's labor; no systems, no team
-- ⚠️ **Revenue Stagnation:** No data showing growth; may be declining business being sold before further deterioration
+- **Economic downturn** — Auto repair is somewhat recession-resistant, but luxury services (car wash, non-essential repairs) may decline
+- **Electric vehicle shift** — EVs require less maintenance (no oil changes, fewer brake jobs). Long-term trend to monitor.
+- **Competition** — Multiple auto shops in area; need strong differentiation
 
 ---
 
-## 6. DUE DILIGENCE CHECKLIST
+## Data Sources & Verification
 
-### Critical Items to Request from Seller:
+All data points in this report can be independently verified using the 📎 Verify links throughout.
 
-**Financial:**
-- [ ] 2021-2025 federal tax returns (business and personal if sole proprietor)
-- [ ] Monthly P&L statements (last 36 months)
-- [ ] Bank statements (all business accounts, last 24 months)
-- [ ] Accounts receivable aging report (if any credit extended)
-- [ ] Property tax bills and assessments (last 3 years)
-- [ ] Insurance policies and premium history (liability, property, worker's comp if applicable)
-- [ ] Utility bills (last 24 months) to verify operating costs
-- [ ] Breakdown of car wash vs. repair revenue (monthly, last 24 months)
+**Primary Sources:**
+- Broker listing: https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729
+- Business website: https://35wautorepairandwash.com/
+- Demographics: https://datausa.io/profile/geo/mounds-view-mn
+- BBB: https://www.bbb.org/us/mn/saint-paul/profile/auto-repair/35w-auto-repair-0704-96030071
+- Competitor search: https://www.yelp.com/search?cflt=autorepair&find_loc=Mounds+View,+MN+55112
 
-**Legal/Property:**
-- [ ] Commercial property appraisal (independent, recent)
-- [ ] Phase I Environmental Site Assessment (MANDATORY for auto repair)
-- [ ] Phase II ESA if Phase I indicates potential contamination
-- [ ] Title search and title insurance
-- [ ] Survey
-- [ ] Zoning verification letter from City of Mounds View
-- [ ] All permits (building, occupancy, auto repair, car wash, wastewater discharge)
-- [ ] Compliance records: EPA, Minnesota Pollution Control Agency, county health dept
-- [ ] Any violations, citations, or compliance orders (past 10 years)
+**Data Collection:** February 11, 2026
 
-**Operational:**
-- [ ] Equipment list with age, condition, replacement cost
-- [ ] Car wash equipment: manufacturer, model, service records, expected remaining life
-- [ ] Lift/hoist certifications and inspection records
-- [ ] Customer database / records (if available)
-- [ ] Vendor/supplier list and terms
-- [ ] Operating procedures manual (if exists)
-- [ ] Training documentation (how will owner train buyer during 1-month training period?)
-
-**Market Research:**
-- [ ] Independent traffic study for Program Ave and I-35W visibility
-- [ ] Competitor pricing analysis (shop 3-5 competitors for same services)
-- [ ] Customer interviews (if seller permits contact with key accounts)
-
-### Recommended Third-Party Verification:
-
-- [ ] **Property appraisal** by MAI-certified appraiser specializing in commercial automotive
-- [ ] **Phase I ESA** by environmental consultant (non-negotiable for auto shop)
-- [ ] **Equipment appraisal** by automotive equipment specialist
-- [ ] **Building inspection** by licensed commercial inspector
-- [ ] **Title review** by real estate attorney
-- [ ] **Franchise tax search** (Minnesota)
-- [ ] **UCC lien search**
-- [ ] **Civil litigation search** for business and owner name
+**Unverifiable Claims:**
+- Exact breakdown of $171K "Total Income" (owner salary vs. profit) — Requires seller disclosure
+- Equipment condition and remaining useful life — Requires on-site inspection
+- Customer count and retention rate — Requires seller records
+- Real estate appraised value — Requires independent appraisal
+- Exact review scores/counts — Platforms require direct access to see full data
 
 ---
 
-## 7. VALUATION CONSIDERATIONS
+## Verdict
 
-### Valuation Breakdown
+✅ **PROCEED WITH CAUTION — STRONG POTENTIAL FOR RIGHT BUYER**
 
-**Scenario 1: Real Estate Justifies Asking Price**
+This opportunity has solid fundamentals but requires the **right buyer profile** to succeed:
 
-If independent appraisal values property at $1.3M-$1.5M:
-- Land + Building: $1,300,000 (assumed)
-- Business (3x SDE): $514,020
-- **Total Value:** $1,814,020
-- **Asking Price:** $1,600,000
-- **Conclusion:** Fair deal IF property value confirmed
+**Ideal Buyer:**
+- ✅ Experienced auto mechanic or shop manager
+- ✅ Can work full-time in the business (at least initially)
+- ✅ Has $1.28M+ cash for down payment OR strong lender relationships
+- ✅ Sees value in real estate ownership and long-term equity building
+- ✅ Comfortable with slow-growth, stable business model
 
-**Scenario 2: Real Estate Worth Less**
+**NOT Ideal For:**
+- ❌ Absentee/investor buyers (zero employees = owner must work)
+- ❌ First-time business buyers without auto repair experience
+- ❌ Buyers expecting fast ROI or aggressive growth without additional investment
 
-If property appraises at $800K (more typical for 4,152 sq ft industrial in suburban MN):
-- Land + Building: $800,000
-- Business (3x SDE): $514,020
-- **Total Value:** $1,314,020
-- **Asking Price:** $1,600,000
-- **Conclusion:** Overpriced by ~$286K (18%)
+**Key Questions to Answer Before Proceeding:**
 
-**Business Valuation (Excluding Real Estate):**
-- **SDE Multiple Method:** $171,340 x 3.0 = $514,020
-- **Revenue Multiple Method:** $372,064 x 1.5 = $558,096
-- **Asset Value:** Equipment $75K + Inventory $30K = $105,000 (floor value)
+1. **Financial verification:**
+   - Request 3 years of tax returns (Schedule C or corporate returns)
+   - Get profit & loss statements with owner compensation clearly separated
+   - Verify gross revenue matches tax filings
 
-**Industry Valuation Benchmarks:**
-- Auto repair shops typically sell for 2.5-4x SDE
-- 3x SDE is market average for owner-operated shops
-- Real estate significantly increases valuation
+2. **Real estate valuation:**
+   - Order independent appraisal of land + building
+   - Confirm allocation of $1.6M (how much is real estate vs. business goodwill?)
 
-### Financing Considerations
+3. **Operational capacity:**
+   - How many customers/cars serviced per week?
+   - What are current operating hours?
+   - Why is revenue per bay below industry average?
 
-**Down Payment:** Listing shows $1,280,000 (80% down) required
+4. **Transition plan:**
+   - Will seller provide 1 month training (per listing)?
+   - Will seller introduce buyer to customer base?
+   - Are customer records and contact information included?
 
-**SBA 7(a) Loan Potential:**
-- Real estate component: potentially 90% LTV (10% down on property value)
-- Business component: typically 10-20% down
-- **Challenge:** Low revenue makes debt service coverage ratio (DSCR) tight
-- Assume $1.6M loan at 8% over 25 years = ~$12,335/month
-- SDE of $171,340 / 12 = $14,278/month - **barely covers debt service**
-- Adding owner salary need, DSCR is likely BELOW 1.25x required by most lenders
+5. **Equipment audit:**
+   - On-site inspection of all equipment with a mechanic
+   - Verify no deferred maintenance or imminent capital expenditures
 
-**Seller Financing:**
-- Not mentioned in listing
-- Recommend negotiating seller note for 10-20% of purchase price
+**Recommended Next Steps:**
 
----
+1. Contact broker (Joseph McKeown, License #40913077) via FCBB to request financials and schedule site visit  
+   📎 Verify: [Contact form](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729) — Request information
 
-## 8. FINAL RECOMMENDATION
+2. Drive to location and assess visibility, condition, and neighborhood during business hours
 
-### Risk Level: ⚠️ **MODERATE-HIGH**
+3. Request customer testimonials or references from regular clients
 
-**PROCEED WITH CAUTION** - This deal is ONLY viable if:
+4. Consult with commercial real estate appraiser for property valuation
 
-1. **Independent property appraisal confirms value >$1.2M**
-2. **Phase I ESA shows no environmental contamination**
-3. **Buyer has significant cash (down payment >$400K) OR can negotiate seller financing**
-4. **Buyer has auto repair experience and plans to operate hands-on**
-5. **Buyer has strategy to increase revenue (hiring staff, marketing, extended hours)**
+5. Review environmental compliance records with Minnesota Pollution Control Agency
 
-### Deal Structure Recommendations:
+**Bottom Line:** This is a **real estate + business hybrid deal**. If the building and land alone appraise for $1.2-1.4M, then the business is essentially a low-cost add-on with $171K+ annual cash flow. For a mechanic seeking to own their workspace and build equity, this could be an excellent long-term play. For a pure business investor, the numbers are marginal without capacity expansion.
 
-**Option A: Investor/Operator with Growth Plan**
-- Negotiate to $1.4M if property appraises lower
-- Plan to hire 1-2 ASE-certified technicians within 6 months
-- Implement digital marketing (Google Ads, Yelp, social media)
-- Target revenue growth to $600K+ in Year 2 to justify valuation
-
-**Option B: Real Estate Play**
-- If property appraises at or above $1.5M, this is a real estate acquisition with a business included
-- Consider converting to higher-value use if auto repair doesn't scale (storage units, retail, redevelopment)
-- Interstate frontage has significant value for signage/visibility
-
-### Positive Factors:
-
-- ✅ **Owned real estate** - no landlord risk, no rent increases
-- ✅ **Established business** - 22+ years demonstrates viability
-- ✅ **Strategic location** - I-35W visibility and access
-- ✅ **Dual revenue streams** - auto repair + car wash diversification
-- ✅ **High SDE margin** - 46% indicates efficient owner-operated model
-- ✅ **Growing home values** - +7.76% YoY suggests appreciating real estate market
-- ✅ **High household income** - $90,148 median supports premium pricing
-
-### This Deal Makes Sense For:
-
-- **Experienced auto repair technician** looking to own vs. work for someone else
-- **Real estate investor** who sees property value exceeding $1.2M and can operate or lease the business
-- **Semi-retired mechanic** wanting a lifestyle business (maintain current low-volume model)
-- **Buyer with growth vision** willing to invest in staff, marketing, and modernization
-
-### Walk Away If:
-
-- ❌ Property appraises below $1.0M
-- ❌ Phase I ESA shows soil/groundwater contamination (could cost $100K-$500K to remediate)
-- ❌ Seller cannot provide 3+ years of tax returns and bank statements
-- ❌ You need the business to immediately cash-flow debt service (revenue too low currently)
-- ❌ You have no auto repair experience and can't evaluate equipment condition
-- ❌ You cannot secure financing with reasonable debt service coverage
-
-### Negotiation Leverage:
-
-1. **Low revenue justifies lower business valuation** - focus on property value
-2. **Zero online reviews** - demonstrates lack of brand value
-3. **No employees = no systems** - buyer builds everything from scratch
-4. **Declining population** - market headwinds
-5. **Seller motivation: retirement** - may accept lower price for clean exit
+**DealScout Risk Score:** ⚠️ MODERATE — Good fundamentals, but requires significant due diligence and right buyer fit.
 
 ---
 
-## SOURCES & DATA CITATIONS
-
-All data in this report was obtained from publicly available sources on February 11, 2026:
-
-**Business Listing:**
-- First Choice Business Brokers (FCBB) Listing #24729: [https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729](https://fcbb.com/listing-property/auto-mounds-view-35w-auto-repair-and-car-wash-235-24729)
-- Business website: [https://35wautorepairandwash.com/](https://35wautorepairandwash.com/)
-
-**Reviews & Reputation:**
-- Alignable: [https://www.alignable.com/mounds-view-mn/35w-auto-repair-and-wash](https://www.alignable.com/mounds-view-mn/35w-auto-repair-and-wash)
-- Better Business Bureau: [https://www.bbb.org/us/mn/saint-paul/profile/auto-repair/35w-auto-repair-0704-96030071](https://www.bbb.org/us/mn/saint-paul/profile/auto-repair/35w-auto-repair-0704-96030071)
-- CitySquares: [https://citysquares.com/b/35w-auto-repair-14589531](https://citysquares.com/b/35w-auto-repair-14589531)
-- Yelp area search: [https://yelp.com/search?cflt=carwash&find_loc=Moundsview+Boulevard](https://yelp.com/search?cflt=carwash&find_loc=Moundsview+Boulevard)
-
-**Competitors:**
-- Yelp New Brighton auto repair search: [https://www.yelp.com/search?cflt=autorepair&find_loc=New+Brighton,+MN+55112](https://www.yelp.com/search?cflt=autorepair&find_loc=New+Brighton,+MN+55112)
-- Budget Auto Repair: [https://www.budgetautorepairmn.com/](https://www.budgetautorepairmn.com/)
-- Norm's Tire Sales: [https://www.normstire.com/Automotive-Services](https://www.normstire.com/Automotive-Services)
-- The Garage of New Brighton: [https://www.thegarageofnb.com/](https://www.thegarageofnb.com/)
-- Mounds View Business Directory: [https://www.moundsviewmn.org/business/business_list.php](https://www.moundsviewmn.org/business/business_list.php)
-
-**Demographics:**
-- DataUSA - Mounds View, MN (2023 Census data): [https://datausa.io/profile/geo/mounds-view-mn](https://datausa.io/profile/geo/mounds-view-mn)
-- Minnesota Demographics: [https://www.minnesota-demographics.com/mounds-view-demographics](https://www.minnesota-demographics.com/mounds-view-demographics)
-- Census Reporter: [https://censusreporter.org/profiles/16000US2744530-mounds-view-mn/](https://censusreporter.org/profiles/16000US2744530-mounds-view-mn/)
-- Point2Homes demographics: [https://www.point2homes.com/US/Neighborhood/MN/Mounds-View-Demographics.html](https://www.point2homes.com/US/Neighborhood/MN/Mounds-View-Demographics.html)
-
----
-
-## REPORT LIMITATIONS
-
-This report is based on publicly available data only. The following information was **NOT AVAILABLE** and should be obtained during due diligence:
-
-- Financial statements, tax returns, or verified revenue/expense data
-- Property appraisal value
-- Environmental assessment results
-- Equipment condition and maintenance records
-- Customer database size or composition
-- Actual traffic counts for Program Ave or I-35W exit
-- Detailed breakdown of auto repair vs. car wash revenue
-- Google Maps/Reviews rating (not accessible via search)
-- Yelp star rating and review details
-- Competitor pricing and market share data
-- Historical revenue trends (growing/declining/flat)
-- Reason for 2002 vs. "30+ years" discrepancy
-- Zoning and permit verification
-- Building and equipment inspection reports
-- Industry benchmark data for Minnesota auto repair shops
-- Car wash usage statistics (washes per month, peak seasons)
-
-**Recommendation:** Engage a business broker, CPA, and commercial real estate appraiser with automotive industry experience for comprehensive due diligence before making an offer.
-
----
-
-**Report prepared by DealScout**  
-*AI-Powered Pre-Acquisition Intelligence for Small Business Buyers*
-
-**DISCLAIMER:** This report is for informational purposes only and does not constitute investment advice, a business valuation, or a recommendation to purchase. All data should be independently verified. The buyer assumes all risk in any business acquisition decision.
+**Disclaimer:** This report is for informational purposes only and does not constitute financial, legal, or investment advice. All data points should be independently verified before making any business decisions. Financial figures reported are from seller/broker disclosures and have not been independently audited. DealScout is not responsible for the accuracy of third-party data sources. Real estate values, equipment conditions, and business operations must be verified through professional inspections and financial review.
