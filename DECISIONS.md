@@ -9,6 +9,13 @@ Active decisions for the project. Historical discussion removed — see git hist
 - Hand-craft sample reports → landing page → community posts → measure interest.
 - Build only if validated: >50 signups OR >5 purchase attempts in 2 weeks.
 
+## Positioning
+- **Screening tool, not due diligence replacement.** Covers ~15-20% of full DD (public data layer).
+- Helps buyers filter listings before committing $15-30K to professional DD.
+- Value prop: "Know which businesses deserve your DD budget — and which ones don't."
+- Reports must clearly state what we DON'T cover (financials, legal, environmental).
+- Every report includes "What To Do Next" with actionable next steps.
+
 ## Tech Stack
 - **Python + FastAPI** — best ecosystem for scraping, LLM, PDF, rapid iteration.
 - **Claude Sonnet 4.5** — LLM for analysis. Best reasoning, structured output, 200K context. ~$0.25-1.50/report.
@@ -20,9 +27,9 @@ Active decisions for the project. Historical discussion removed — see git hist
 - **Hetzner** — Serg will provide access token.
 
 ## Pricing
-- **Beta (first 20 customers):** Quick Scan $50 / Full Report $200
-- **Full price:** Quick Scan $100 / Full Report $400 / Subscription $200/mo
-- Rationale: buyer making $100K-$5M decision. $400 is 0.08% of a $500K deal. Higher price = quality signal + filters serious buyers.
+- **Intro (first report per customer):** Quick Scan $20 / Full Report $100
+- **Regular:** Quick Scan $40 / Full Report $200
+- Rationale: DealScout is a screening tool, not full DD. Low price = impulse buy for buyers browsing 10-50 listings. Screen 10 businesses for $200-400. Still 95%+ margin at $1-3 cost per report.
 
 ## Data Sources (priority order)
 1. **Google Places API** — entity resolution, reviews (CRITICAL)

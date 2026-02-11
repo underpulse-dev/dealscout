@@ -58,7 +58,7 @@ NOT a sales pitch — "here's what AI can do for due diligence, thoughts?"
 **Goal:** Deliver real reports to paying customers. Learn what matters.
 **Trigger:** Phase 1 go signals met.
 
-- Accept orders via landing page (Stripe checkout, $200/report)
+- Accept orders via landing page (Stripe checkout, $20 Quick Scan / $100 Full Report intro pricing)
 - Generate reports semi-manually using sub-agent (proven process)
 - Clawer handles: data collection, analysis, PDF generation via sub-sessions
 - Target: 10-20 reports

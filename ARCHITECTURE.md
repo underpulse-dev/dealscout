@@ -6,8 +6,8 @@
 
 - **Input:** Business name + location
 - **Output:** Comprehensive PDF report (reputation, competition, demographics, risks)
-- **Value prop:** Turn 20+ hours of due diligence into a 5-minute AI report
-- **Positioning:** "The Carfax for business acquisitions"
+- **Value prop:** Screen business acquisitions in 5 minutes. Know which ones deserve your DD budget.
+- **Positioning:** "The Carfax for business acquisitions" — pre-screening, not full DD
 
 ---
 
@@ -76,22 +76,25 @@ Email Delivery (SendGrid) + Download Link
 
 ## Report Types
 
-### Quick Scan ($100, beta $50)
+### Quick Scan ($20 intro / $40 regular)
 - Business overview + online reputation summary
 - Local market context + competition density
 - Key risk flags
+- Go / No-Go recommendation
 - **2-3 pages, <2 min generation**
 
-### Full Report ($400, beta $200)
+### Full Report ($100 intro / $200 regular)
 Everything in Quick Scan, plus:
 - Competitive landscape deep-dive
 - Customer sentiment analysis (themes, trends)
 - Demographic insights + target customer profile
 - Search interest trends
 - Risk signal analysis (BBB, news, legal)
-- Acquisition readiness score (0-100)
-- Due diligence checklist + questions for seller
+- Screening score (0-100)
+- "What To Do Next" — actionable next steps + questions for seller
 - **8-12 pages, <5 min generation**
+
+**Note:** DealScout is a pre-screening tool, not a due diligence replacement. Reports cover publicly available data only. Every report includes a clear disclaimer and recommendations for professional DD services.
 
 ---
 
