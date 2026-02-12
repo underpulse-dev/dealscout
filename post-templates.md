@@ -23,7 +23,7 @@ Each report includes:
 - Risk signals (declining reviews, negative press, operational red flags)
 - Executive summary: Buy, Negotiate, or Walk Away
 
-**Here's a real example:** [Stinkin Crawfish — Inglewood, CA](https://underpulse-dev.github.io/dealscout/report-1-stinkin-crawfish-inglewood.html) (actual business currently for sale, all real data)
+**Here's a real example:** [Stinkin Crawfish — Inglewood, CA](https://underpulse-dev.github.io/dealscout/sample-reports/report-1-stinkin-crawfish-inglewood.html) (actual business currently for sale, all real data)
 
 **My question for you:** Would this be useful in your screening process? What would make this a "must-have" vs. "nice to have"?
 
@@ -54,7 +54,7 @@ Takes 10+ hours per business. And if you're screening 20 listings to find one wo
 
 Think of it like a Carfax report before you pay for the mechanic's inspection.
 
-**Here's a real sample:** [35W Auto Repair & Wash — Mounds View, MN](https://underpulse-dev.github.io/dealscout/report-2-35w-auto-repair-mounds-view.html) (actual business for sale, all real data)
+**Here's a real sample:** [35W Auto Repair & Wash — Mounds View, MN](https://underpulse-dev.github.io/dealscout/sample-reports/report-2-35w-auto-repair-mounds-view.html) (actual business for sale, all real data)
 
 **I'm looking for honest feedback:**
 - Would this save you time in your screening process?
@@ -84,7 +84,7 @@ Buyers looking at 10-20 listings spend hours manually checking Google Reviews, Y
 - Risk signals (declining reviews, negative press)
 - Go / No-Go recommendation
 
-**Real example:** [Woof Gang Bakery — Austin, TX](https://underpulse-dev.github.io/dealscout/report-3-woof-gang-mueller-austin.html) (actual franchise for sale)
+**Real example:** [Woof Gang Bakery — Austin, TX](https://underpulse-dev.github.io/dealscout/sample-reports/report-3-woof-gang-mueller-austin.html) (actual franchise for sale)
 
 **Questions for the community:**
 1. If you've bought or considered buying a business, would this have been useful?
@@ -141,7 +141,7 @@ The idea: **DealScout** — AI-generated intelligence reports that automate the 
 Think "Carfax for business acquisitions."
 
 Here's a real example:
-👉 [Sample Report: Auto Repair Shop in Minnesota](https://underpulse-dev.github.io/dealscout/report-2-35w-auto-repair-mounds-view.html)
+👉 [Sample Report: Auto Repair Shop in Minnesota](https://underpulse-dev.github.io/dealscout/sample-reports/report-2-35w-auto-repair-mounds-view.html)
 
 I'm validating demand before building the full product. If you've ever looked at buying a business (or know someone who has), I'd love your feedback:
 
@@ -171,7 +171,7 @@ I've been hearing 10+ hours per business (Google Reviews, Yelp, competitors, dem
 
 I built a tool to automate that screening layer: **DealScout** — AI-generated intelligence reports that cover the public data side of pre-acquisition research.
 
-Here's what a report looks like: [Sample Report — Auto Repair Shop](https://underpulse-dev.github.io/dealscout/report-2-35w-auto-repair-mounds-view.html) (real business, real data)
+Here's what a report looks like: [Sample Report — Auto Repair Shop](https://underpulse-dev.github.io/dealscout/sample-reports/report-2-35w-auto-repair-mounds-view.html) (real business, real data)
 
 Would this be useful to you? What would make it a no-brainer?
 
