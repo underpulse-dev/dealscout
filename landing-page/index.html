@@ -298,7 +298,7 @@
                         <li class="flex gap-2"><span>✓</span> <span>Delivered in 10 minutes</span></li>
                         <li class="flex gap-2 text-gray-500"><span></span> <span>$40/report after first</span></li>
                     </ul>
-                    <button onclick="alert('Email hello@dealscout.ai to order your Quick Scan!')" class="w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition">
+                    <button onclick="openOrderModal('quick-scan')" class="w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition">
                         Order Quick Scan
                     </button>
                 </div>
@@ -322,7 +322,7 @@
                         <li class="flex gap-2"><span>✓</span> <span>"What To Do Next" action plan</span></li>
                         <li class="flex gap-2 text-gray-500"><span></span> <span>$200/report after first</span></li>
                     </ul>
-                    <button onclick="alert('Email hello@dealscout.ai to order your Full Report!')" class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition">
+                    <button onclick="openOrderModal('full-report')" class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition">
                         Order Full Report
                     </button>
                 </div>
@@ -334,28 +334,55 @@
     </section>
 
     <!-- Email Waitlist -->
-    <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <section id="waitlist" class="py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div class="max-w-3xl mx-auto px-4 text-center">
             <h3 class="text-3xl font-bold mb-4">Get Notified When We Launch</h3>
             <p class="mb-8 text-blue-100">Join our waitlist to get early access and exclusive launch pricing</p>
-            <form id="waitlist-form" class="flex gap-4 max-w-md mx-auto">
-                <input 
-                    type="email" 
-                    id="email-input"
-                    placeholder="your@email.com" 
-                    required
-                    class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                />
-                <button 
-                    type="submit"
-                    class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition whitespace-nowrap"
-                >
-                    Join Waitlist
-                </button>
+            <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" class="max-w-lg mx-auto">
+                <input type="hidden" name="form-name" value="waitlist" />
+                <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                <div class="flex gap-4">
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="your@email.com" 
+                        required
+                        class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    />
+                    <button 
+                        type="submit"
+                        class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition whitespace-nowrap"
+                    >
+                        Join Waitlist
+                    </button>
+                </div>
             </form>
-            <p id="waitlist-message" class="mt-4 text-sm text-blue-100"></p>
         </div>
     </section>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            <h3 class="text-2xl font-bold mb-2">Request Your Report</h3>
+            <p class="text-gray-600 mb-6" id="modal-subtitle">We're launching soon — tell us what business you're looking at.</p>
+            <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+                <input type="hidden" name="form-name" value="orders" />
+                <input type="hidden" name="report-type" id="report-type" value="" />
+                <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                <div class="space-y-4">
+                    <input type="email" name="email" placeholder="Your email" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <input type="text" name="business-name" placeholder="Business name" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <input type="text" name="business-location" placeholder="City, State" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <input type="url" name="listing-url" placeholder="BizBuySell listing URL (optional)" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition">
+                        Request Report — We'll Email You
+                    </button>
+                </div>
+            </form>
+            <p class="text-xs text-gray-400 mt-4 text-center">We'll notify you when your report type is available. No charge until then.</p>
+        </div>
+    </div>
 
     <!-- FAQ -->
     <section class="py-16 bg-white">
@@ -417,24 +444,23 @@
     </footer>
 
     <script>
-        // Waitlist form handler (for now, just shows success message)
-        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const message = document.getElementById('waitlist-message');
-            
-            // In production, this would send to a backend/API
-            // For MVP validation, we'll just show success and log to console
-            console.log('Waitlist signup:', email);
-            
-            message.textContent = '✓ Thanks! We\'ll email you when we launch.';
-            message.className = 'mt-4 text-sm text-green-300 font-semibold';
-            
-            // Clear form
-            document.getElementById('email-input').value = '';
-            
-            // In real version, send to backend:
-            // fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) })
+        function openOrderModal(type) {
+            document.getElementById('report-type').value = type;
+            const subtitle = type === 'quick-scan' 
+                ? 'Quick Scan ($20) — tell us what business you\'re looking at.'
+                : 'Full Report ($100) — tell us what business you\'re looking at.';
+            document.getElementById('modal-subtitle').textContent = subtitle;
+            const modal = document.getElementById('order-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        function closeOrderModal() {
+            const modal = document.getElementById('order-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        document.getElementById('order-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeOrderModal();
         });
     </script>
 </body>

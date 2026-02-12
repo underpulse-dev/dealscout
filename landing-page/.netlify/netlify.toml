@@ -1,0 +1,26 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/root/openclaw-workspace/tracks/dealscout/landing-page"
+publishOrigin = "default"
+base = "/root/openclaw-workspace/tracks/dealscout/landing-page"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
