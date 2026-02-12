@@ -8,8 +8,7 @@ redirects = []
 
 [build]
 publish = "/root/openclaw-workspace/tracks/dealscout/landing-page"
-publishOrigin = "default"
-base = "/root/openclaw-workspace/tracks/dealscout/landing-page"
+publishOrigin = "ui"
 
 [build.environment]
 
