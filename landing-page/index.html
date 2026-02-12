@@ -338,7 +338,7 @@
         <div class="max-w-3xl mx-auto px-4 text-center">
             <h3 class="text-3xl font-bold mb-4">Get Notified When We Launch</h3>
             <p class="mb-8 text-blue-100">Join our waitlist to get early access and exclusive launch pricing</p>
-            <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" class="max-w-lg mx-auto">
+            <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="waitlist-form" class="max-w-lg mx-auto">
                 <input type="hidden" name="form-name" value="waitlist" />
                 <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
                 <div class="flex gap-4">
@@ -356,6 +356,7 @@
                         Join Waitlist
                     </button>
                 </div>
+                <p id="waitlist-msg" class="mt-4 text-sm hidden"></p>
             </form>
         </div>
     </section>
@@ -366,7 +367,7 @@
             <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
             <h3 class="text-2xl font-bold mb-2">Request Your Report</h3>
             <p class="text-gray-600 mb-6" id="modal-subtitle">We're launching soon — tell us what business you're looking at.</p>
-            <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+            <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="order-form">
                 <input type="hidden" name="form-name" value="orders" />
                 <input type="hidden" name="report-type" id="report-type" value="" />
                 <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -461,6 +462,32 @@
         }
         document.getElementById('order-modal').addEventListener('click', function(e) {
             if (e.target === this) closeOrderModal();
+        });
+
+        function submitForm(form, successMsg) {
+            const data = new URLSearchParams(new FormData(form)).toString();
+            fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: data })
+                .then(() => successMsg())
+                .catch(() => successMsg());
+        }
+
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            submitForm(form, () => {
+                form.querySelector('input[type=email]').value = '';
+                const msg = document.getElementById('waitlist-msg');
+                msg.textContent = '✓ You\'re on the list! We\'ll email you when we launch.';
+                msg.className = 'mt-4 text-sm text-green-300 font-semibold';
+            });
+        });
+
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            submitForm(form, () => {
+                form.innerHTML = '<div class="text-center py-8"><div class="text-4xl mb-4">🎯</div><h3 class="text-xl font-bold mb-2">Request received!</h3><p class="text-gray-600">We\'ll email you when your report is ready. No charge until then.</p></div>';
+            });
         });
     </script>
 </body>
