@@ -77,13 +77,15 @@ Active decisions for the project. Historical discussion removed — see git hist
 ### Direct Competitors (AI deal screening for SMB/search fund buyers)
 
 **Skarp AI** — https://skarp.ai
-- AI-powered M&A deal flow automation for search fund operators
-- Features: proprietary search engine across US broker network, criteria-based matching, CIM analysis ("Deal Navigator"), structured dashboards
-- Actively posted on SearchFunder (has community presence)
-- Appears VC-backed (listed on Tracxn with competitors Midaxo, Finquest, M&A Cloud)
-- Pricing: unknown (not public)
-- **Overlap with DealScout:** High. Their "Deal Navigator" does CIM analysis + deal screening — similar value prop but works from CIM documents (seller-provided), not public data
-- **Our differentiation:** DealScout works from public data only (no CIM needed), targets pre-CIM screening stage. Cheaper ($20-200 per report vs likely SaaS subscription). One-off reports vs ongoing platform.
+- AI-powered M&A deal **sourcing** for search fund operators
+- Core product: scans 27,000+ listings across top US brokers, matches against your acquisition criteria, sends alerts when new deals match
+- Also building "Deal Navigator" module for CIM analysis (extracts financials from CIM packages into structured dashboard) — announced but unclear if shipped
+- Pricing: **$85/month** subscription, 30-day free trial
+- One testimonial (Jamie Gorman, Left Lane Ventures)
+- Funded (1 round per Tracxn), competitors listed as Midaxo, Finquest, M&A Cloud
+- **Overlap with DealScout:** LOW-MEDIUM. Skarp is primarily a **deal sourcing/matching** tool (find listings that match your criteria). Their Deal Navigator module is closer to DealScout but focuses on CIM document analysis (seller-provided data), not public data screening.
+- **What Skarp does NOT do:** Generate standalone screening reports from public data for a specific listing. No reputation analysis, no local demographics, no competitor landscape, no risk flags from public sources. It matches listings to criteria — it doesn't deeply evaluate individual businesses.
+- **Our differentiation:** DealScout evaluates a specific business using public data (reviews, demographics, competitors, market trends). Skarp finds you listings; DealScout tells you if a specific listing is worth pursuing. Complementary, not competing. Per-report pricing ($20-200) vs monthly subscription ($85/mo).
 
 **Cerco AI** — cerco.ai
 - AI-powered off-market deal sourcing (company & contact search)
@@ -93,6 +95,13 @@ Active decisions for the project. Historical discussion removed — see git hist
 - **Overlap with DealScout:** Low. Cerco focuses on finding companies to acquire (sourcing), not evaluating specific listings (screening)
 
 ### Adjacent Competitors (enterprise/PE level)
+
+**SESAMm Deal Screening Reports** — sesamm.com
+- AI-powered "pre-commercial due diligence" reports for PE and M&A teams
+- Claims to deliver "weeks of manual research in hours" — closest concept to DealScout
+- Used by 7 of top 10 PE firms (Carlyle, Warburg)
+- Enterprise pricing (not public), targets large PE deal teams
+- **Overlap with DealScout:** CONCEPT is similar (pre-screening reports) but targets enterprise PE, not individual SMB buyers. Likely $1000s per report. Completely different market segment.
 
 **V7 Go PE Screening Agent** — v7labs.com
 - AI agent that reads CIMs, extracts financials (Revenue, EBITDA), scores against investment thesis
