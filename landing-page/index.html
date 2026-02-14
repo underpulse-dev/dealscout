@@ -619,7 +619,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-section lg:text-4xl mb-4">Get Notified When We Launch</h2>
             <p class="mb-8 text-blue-50 text-lg max-w-2xl mx-auto">Join our waitlist to get early access and exclusive launch pricing</p>
-            <form name="waitlist" method="POST" id="waitlist-form" class="max-w-lg mx-auto">
+            <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="waitlist-form" class="max-w-lg mx-auto">
                 <input type="hidden" name="form-name" value="waitlist" />
                 <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -648,7 +648,7 @@
             <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl leading-none w-10 h-10 flex items-center justify-center min-h-[44px] min-w-[44px]">&times;</button>
             <h3 class="text-subsection mb-2 pr-8 text-gray-900">Request Your Report</h3>
             <p class="text-gray-700 mb-6" id="modal-subtitle">We're launching soon — tell us what business you're looking at.</p>
-            <form name="orders" method="POST" id="order-form">
+            <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="order-form">
                 <input type="hidden" name="form-name" value="orders" />
                 <input type="hidden" name="report-type" id="report-type" value="" />
                 <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -774,36 +774,42 @@
             if (e.key === 'Escape') closeOrderModal();
         });
 
-        // Form submission helper
-        function submitForm(formData, successFn) {
-            fetch('/.netlify/functions/submit', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(formData)
-            }).then(() => successFn()).catch(() => successFn());
-        }
-
-        // Waitlist form
+        // Waitlist form — submit via Netlify Forms API, show success inline
         document.getElementById('waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('input[type=email]').value;
-            submitForm({ formType: 'waitlist', email }, () => {
-                this.querySelector('input[type=email]').value = '';
+            const form = this;
+            const formData = new URLSearchParams(new FormData(form)).toString();
+            fetch('/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: formData
+            }).then(() => {
+                form.querySelector('input[type=email]').value = '';
                 const msg = document.getElementById('waitlist-msg');
                 msg.innerHTML = '<i data-lucide="check-circle" style="width:16px;height:16px;display:inline-block;color:#86efac;margin-right:4px;vertical-align:middle"></i> You\'re on the list! We\'ll email you when we launch.';
                 msg.className = 'mt-4 text-green-300 font-semibold';
                 lucide.createIcons();
+            }).catch(() => {
+                const msg = document.getElementById('waitlist-msg');
+                msg.innerHTML = 'Something went wrong. Please try again.';
+                msg.className = 'mt-4 text-red-300 font-semibold';
             });
         });
 
-        // Order form
+        // Order form — submit via Netlify Forms API, show success inline
         document.getElementById('order-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const fd = Object.fromEntries(new FormData(this));
-            fd.formType = 'order';
-            submitForm(fd, () => {
-                this.innerHTML = '<div class="text-center py-8"><div class="mb-4"><i data-lucide="crosshair" style="width:64px;height:64px;display:inline-block;color:#2563eb"></i></div><h3 class="text-2xl font-bold mb-2 text-gray-900">Request received!</h3><p class="text-gray-700">We\'ll email you when your report is ready. No charge until then.</p></div>';
+            const form = this;
+            const formData = new URLSearchParams(new FormData(form)).toString();
+            fetch('/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: formData
+            }).then(() => {
+                form.innerHTML = '<div class="text-center py-8"><div class="mb-4"><i data-lucide="crosshair" style="width:64px;height:64px;display:inline-block;color:#2563eb"></i></div><h3 class="text-2xl font-bold mb-2 text-gray-900">Request received!</h3><p class="text-gray-700">We\'ll email you when your report is ready. No charge until then.</p></div>';
                 lucide.createIcons();
+            }).catch(() => {
+                form.innerHTML = '<div class="text-center py-8"><p class="text-red-600">Something went wrong. Please email underpulse.dev@gmail.com</p></div>';
             });
         });
     </script>
