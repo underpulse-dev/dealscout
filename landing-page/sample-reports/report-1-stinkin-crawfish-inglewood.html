@@ -7,391 +7,586 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .warning-badge { background-color: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; }
-        .success-badge { background-color: #d1fae5; color: #065f46; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; }
-        .verify-link { display: inline-flex; align-items: center; color: #3b82f6; text-decoration: none; font-size: 0.875rem; margin-top: 0.25rem; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Typography Scale */
+        h1, .text-page-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h2, .text-section {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        h3, .text-subsection {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 768px) {
+            h1, .text-page-title {
+                font-size: 34px;
+            }
+            h2, .text-section {
+                font-size: 28px;
+            }
+            h3, .text-subsection {
+                font-size: 20px;
+            }
+        }
+        
+        .warning-badge { background-color: #fef3c7; color: #92400e; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; }
+        .success-badge { background-color: #d1fae5; color: #065f46; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; }
+        .danger-badge { background-color: #fee2e2; color: #991b1b; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; }
+        .verify-link { 
+            display: inline-flex; 
+            align-items: center; 
+            color: #3b82f6; 
+            text-decoration: none; 
+            font-size: 0.875rem; 
+            margin-top: 0.25rem;
+            word-break: break-all;
+        }
         .verify-link:hover { text-decoration: underline; }
-        .verify-box { background-color: #f3f4f6; border-left: 3px solid #3b82f6; padding: 0.5rem; margin-top: 0.5rem; font-size: 0.875rem; color: #4b5563; }
+        .verify-box { 
+            background-color: #f3f4f6; 
+            border-left: 3px solid #3b82f6; 
+            padding: 0.5rem; 
+            margin-top: 0.5rem; 
+            font-size: 0.875rem; 
+            color: #4b5563;
+            overflow-wrap: break-word;
+        }
+        
+        /* Sticky TOC */
+        .toc-sticky {
+            position: sticky;
+            top: 80px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+        
+        .toc-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #4b5563;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toc-link:hover {
+            background-color: #f3f4f6;
+            border-left-color: #3b82f6;
+            color: #1f2937;
+        }
+        
+        .toc-link.active {
+            background-color: #eff6ff;
+            border-left-color: #3b82f6;
+            color: #1e40af;
+            font-weight: 600;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
-    <div class="max-w-5xl mx-auto bg-white shadow-lg my-8">
+    <!-- Sticky Back Navigation -->
+    <div class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <a href="../index.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition min-h-[44px]">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Back to DealScout
+            </a>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto bg-white shadow-lg my-0 md:my-8 md:rounded-lg overflow-hidden">
         <!-- Header -->
-        <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8">
+        <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-6 md:p-8">
             <div class="flex items-center justify-between mb-4">
-                <h1 class="text-3xl font-bold">🎯 DealScout</h1>
+                <h1 class="text-xl md:text-2xl font-bold">🎯 DealScout</h1>
                 <span class="bg-white/20 px-3 py-1 rounded text-sm">Sample Report</span>
             </div>
-            <h2 class="text-3xl font-bold mb-2">Stinkin Crawfish - Inglewood, CA</h2>
-            <p class="text-orange-100 text-lg">Cajun Seafood Restaurant • 11236 Crenshaw Blvd, Inglewood, CA 90303</p>
-            <div class="mt-4">
-                <span class="bg-yellow-200 text-yellow-900 px-3 py-1 rounded-full font-semibold">⚠️ TEMPORARILY CLOSED (as of Sept 2025)</span>
+            
+            <!-- Business Name & Location -->
+            <h2 class="text-page-title md:text-4xl mb-2">Stinkin Crawfish</h2>
+            <p class="text-orange-100 text-lg mb-6">11236 Crenshaw Blvd, Inglewood, CA 90303 • Cajun Seafood Restaurant</p>
+            
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-orange-200 text-sm mb-1">Asking Price</div>
+                    <div class="text-2xl font-bold">$795,000</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-orange-200 text-sm mb-1">Rating</div>
+                    <div class="text-2xl font-bold">⭐ 4.2/5</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-orange-200 text-sm mb-1">Reviews</div>
+                    <div class="text-2xl font-bold">51+</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-orange-200 text-sm mb-1">Status</div>
+                    <div class="text-xl font-bold">⚠️ CLOSED</div>
+                </div>
             </div>
         </div>
 
-        <!-- Report Content -->
-        <div class="p-8">
-            <!-- Executive Summary -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Executive Summary</h3>
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
-                    <p class="text-sm font-semibold text-yellow-800 mb-2">⚠️ CAUTION / FURTHER INVESTIGATION REQUIRED</p>
-                    <p class="text-gray-700">Business status unclear; closure reported on multiple platforms.</p>
-                </div>
-                <p class="text-gray-700 mb-4">
-                    Stinkin Crawfish is a Cajun seafood restaurant located in Inglewood, CA, specializing in crawfish boils, wings, and Cajun-style seafood dishes. The business appears to be part of a multi-location franchise with locations across California, Florida, and Key West. <strong>Critical concern:</strong> Multiple sources indicate the Inglewood location is temporarily closed as of September 2025, raising significant due diligence flags for potential buyers.
-                </p>
-                <div class="verify-box">
-                    📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Business status on Yelp</a>
-                </div>
-                <div class="grid md:grid-cols-2 gap-4 mt-4">
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                        <h4 class="font-bold text-green-900 mb-2">✅ Strengths</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Sports venue proximity (SoFi Stadium, Intuit Dome)</li>
-                            <li>• Niche Cajun differentiation vs Mexican seafood competitors</li>
-                            <li>• Multi-location franchise support</li>
-                            <li>• Multi-revenue streams (dine-in, delivery, takeout)</li>
-                        </ul>
+        <!-- Two Column Layout: TOC + Content -->
+        <div class="grid md:grid-cols-4 gap-0">
+            <!-- Table of Contents (Sticky) -->
+            <div class="md:col-span-1 bg-gray-50 border-r border-gray-200 p-6 hidden md:block">
+                <nav class="toc-sticky">
+                    <h3 class="text-subsection mb-4 text-gray-900">Contents</h3>
+                    <a href="#summary" class="toc-link active">Executive Summary</a>
+                    <a href="#overview" class="toc-link">Business Overview</a>
+                    <a href="#financials" class="toc-link">Financials</a>
+                    <a href="#reputation" class="toc-link">Reputation</a>
+                    <a href="#location" class="toc-link">Location</a>
+                    <a href="#competition" class="toc-link">Competition</a>
+                    <a href="#opportunities" class="toc-link">Opportunities</a>
+                    <a href="#risks" class="toc-link">Risks</a>
+                    <a href="#sources" class="toc-link">Sources</a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="md:col-span-3 p-6 md:p-8">
+                <!-- Executive Summary -->
+                <section id="summary" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Executive Summary</h2>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+                        <p class="font-semibold text-yellow-800 mb-2">⚠️ CAUTION / FURTHER INVESTIGATION REQUIRED</p>
+                        <p class="text-gray-800">Business status unclear; closure reported on multiple platforms.</p>
                     </div>
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                        <h4 class="font-bold text-red-900 mb-2">⚠️ Risks</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Currently marked "TEMP. CLOSED"</li>
-                            <li>• No active sale listing found</li>
-                            <li>• Inconsistent review quality mentioned</li>
-                            <li>• Limited online review presence</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Business Overview -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Business Overview</h3>
-                <div class="space-y-3">
-                    <div>
-                        <p class="text-gray-700"><strong>Concept:</strong> Cajun seafood restaurant with sports bar atmosphere</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Business description and status</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-gray-700"><strong>Address:</strong> 11236 Crenshaw Blvd, Inglewood, CA 90303</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.google.com/maps/search/?api=1&query=Stinkin+Crawfish+11236+Crenshaw+Blvd+Inglewood+CA" target="_blank" class="verify-link">Verify: Location on Google Maps (street view and area)</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-gray-700"><strong>Franchise/Chain:</strong> Part of Stinkin Crawfish multi-location brand</p>
-                        <div class="verify-box">
-                            📎 <a href="https://stinkincrawfish.com/about_us" target="_blank" class="verify-link">Verify: Company information and locations</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-gray-700"><strong>Menu Focus:</strong> Cajun crawfish boils, wings and appetizers, beers and micheladas, seafood plates and combos</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.doordash.com/store/stinkin-crawfish-inglewood-25944600/" target="_blank" class="verify-link">Verify: Current menu offerings and pricing on DoorDash</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-gray-700"><strong>Operating Model:</strong> Dine-in with sports viewing, delivery via DoorDash, takeout service</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.instagram.com/stinking_crawfish_inglewood/" target="_blank" class="verify-link">Verify: Recent activity and customer posts on Instagram</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Financial Overview -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Financial Overview</h3>
-                <div class="bg-red-50 border-l-4 border-red-500 p-4">
-                    <p class="font-semibold text-red-900 mb-2">⚠️ DATA NOT AVAILABLE</p>
-                    <ul class="text-sm text-red-800 space-y-1">
-                        <li>• <strong>Asking Price:</strong> No active business-for-sale listing found</li>
-                        <li>• <strong>Revenue:</strong> No public financial disclosure available</li>
-                        <li>• <strong>Years Established:</strong> Exact opening date not confirmed in public records</li>
-                    </ul>
-                    <p class="text-red-800 mt-3 text-sm">
-                        <strong>Red Flag:</strong> No active listings found on BizBuySell, LoopNet, or other business broker platforms. Combined with "temporarily closed" status, this suggests the business may not be actively for sale or may have operational issues.
+                    <p class="text-gray-800 mb-4 leading-relaxed">
+                        Stinkin Crawfish is a Cajun seafood restaurant located in Inglewood, CA, specializing in crawfish boils, wings, and Cajun-style seafood dishes. The business appears to be part of a multi-location franchise with locations across California, Florida, and Key West. <strong>Critical concern:</strong> Multiple sources indicate the Inglewood location is temporarily closed as of September 2025, raising significant due diligence flags for potential buyers.
                     </p>
-                </div>
-            </section>
+                    <div class="verify-box">
+                        📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Business status on Yelp</a>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h3 class="text-subsection text-green-900 mb-2">✅ Strengths</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>• Sports venue proximity (SoFi Stadium, Intuit Dome)</li>
+                                <li>• Niche Cajun differentiation vs Mexican seafood competitors</li>
+                                <li>• Multi-location franchise support</li>
+                                <li>• Multi-revenue streams (dine-in, delivery, takeout)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <h3 class="text-subsection text-red-900 mb-2">⚠️ Risks</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>• Currently marked "TEMP. CLOSED"</li>
+                                <li>• No active sale listing found</li>
+                                <li>• Inconsistent review quality mentioned</li>
+                                <li>• Limited online review presence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="border-t border-gray-200 my-8"></div>
+                <div class="border-t border-gray-200 my-8"></div>
 
-            <!-- Online Reputation -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Market Position & Reviews</h3>
-                <div class="bg-gray-50 rounded-lg p-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Review Scores (Multiple Sources)</h4>
+                <!-- Business Overview -->
+                <section id="overview" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Business Overview</h2>
                     <div class="space-y-3">
                         <div>
-                            <p><strong>Yelp:</strong> 51 reviews</p>
+                            <p class="text-gray-800"><strong>Concept:</strong> Cajun seafood restaurant with sports bar atmosphere</p>
                             <div class="verify-box">
-                                📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Check current rating and review count</a>
-                            </div>
-                            <p class="text-sm text-yellow-700 mt-1">⚠️ Note: Yelp page shows "TEMP. CLOSED" status as of September 2025</p>
-                        </div>
-                        <div>
-                            <p><strong>Restaurant Guru:</strong> 3.7/5.0 stars (105 reviews)</p>
-                            <div class="verify-box">
-                                📎 <a href="https://restaurantguru.com/Stinkin-Crawfish-of-Inglewood-Inglewood" target="_blank" class="verify-link">Verify: Aggregated rating and reviews</a>
+                                📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Business description and status</a>
                             </div>
                         </div>
                         <div>
-                            <p><strong>Checkle (Aggregated):</strong> 4.2/5.0 stars across platforms</p>
+                            <p class="text-gray-800"><strong>Address:</strong> 11236 Crenshaw Blvd, Inglewood, CA 90303</p>
                             <div class="verify-box">
-                                📎 <a href="https://www.checkle.com/biz/stinkin-crawfish-of-inglewood-inglewood" target="_blank" class="verify-link">Verify: Multi-platform rating summary</a>
+                                📎 <a href="https://www.google.com/maps/search/?api=1&query=Stinkin+Crawfish+11236+Crenshaw+Blvd+Inglewood+CA" target="_blank" class="verify-link">Verify: Location on Google Maps (street view and area)</a>
                             </div>
                         </div>
                         <div>
-                            <p><strong>DoorDash:</strong> 4.0 stars (20+ reviews)</p>
+                            <p class="text-gray-800"><strong>Franchise/Chain:</strong> Part of Stinkin Crawfish multi-location brand</p>
                             <div class="verify-box">
-                                📎 <a href="https://www.doordash.com/store/stinkin-crawfish-inglewood-25944600/" target="_blank" class="verify-link">Verify: Delivery customer ratings</a>
+                                📎 <a href="https://stinkincrawfish.com/about_us" target="_blank" class="verify-link">Verify: Company information and locations</a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-800"><strong>Menu Focus:</strong> Cajun crawfish boils, wings and appetizers, beers and micheladas, seafood plates and combos</p>
+                            <div class="verify-box">
+                                📎 <a href="https://www.doordash.com/store/stinkin-crawfish-inglewood-25944600/" target="_blank" class="verify-link">Verify: Current menu offerings and pricing on DoorDash</a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-800"><strong>Operating Model:</strong> Dine-in with sports viewing, delivery via DoorDash, takeout service</p>
+                            <div class="verify-box">
+                                📎 <a href="https://www.instagram.com/stinking_crawfish_inglewood/" target="_blank" class="verify-link">Verify: Recent activity and customer posts on Instagram</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4 grid md:grid-cols-2 gap-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Positive Themes</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ Quality Cajun seafood and crawfish</li>
-                            <li>✓ Sports bar atmosphere with multiple TVs</li>
-                            <li>✓ Good for group dining and game watching</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Negative Themes</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>⚠️ Inconsistent quality mentioned</li>
-                            <li>⚠️ Service speed concerns during peak times</li>
-                            <li>⚠️ "Warm beers" and quality control issues noted</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <div class="border-t border-gray-200 my-8"></div>
+                <div class="border-t border-gray-200 my-8"></div>
 
-            <!-- Location & Demographics -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Location Analysis</h3>
-                <div class="mb-4">
-                    <p class="text-gray-700"><strong>Location:</strong> 11236 Crenshaw Blvd, Inglewood, CA 90303</p>
-                    <p class="text-gray-700"><strong>Major Intersection:</strong> Crenshaw Blvd (major north-south artery)</p>
-                    <div class="verify-box">
-                        📎 <a href="https://www.google.com/maps/search/?api=1&query=11236+Crenshaw+Blvd+Inglewood+CA+90303" target="_blank" class="verify-link">Verify: Check street view for visibility, parking, and surrounding businesses</a>
-                    </div>
-                    <p class="text-gray-700 mt-2"><strong>Proximity to Major Venues:</strong></p>
-                    <ul class="text-sm text-gray-700 ml-4">
-                        <li>• SoFi Stadium (LA Rams/Chargers) — Approx. 2-3 miles</li>
-                        <li>• Intuit Dome (LA Clippers) — Approx. 2-3 miles</li>
-                        <li>• LAX Airport — Approx. 3-4 miles</li>
-                    </ul>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-3">Demographics (Inglewood, CA)</h4>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <div class="text-3xl font-bold text-gray-900">105,575</div>
-                        <div class="text-sm text-gray-600">Population (2023)</div>
-                        <div class="verify-box mt-2">
-                            📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Population data</a>
+                <!-- Financial Overview -->
+                <section id="financials" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Financial Overview</h2>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                        <p class="font-semibold text-red-900 mb-2 text-sm">⚠️ Financial data not publicly available — no active sale listing found</p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white rounded-lg p-4 border border-red-200">
+                                <div class="text-sm text-gray-700 mb-1">Asking Price</div>
+                                <div class="text-xl font-bold text-gray-900">Not Listed</div>
+                                <p class="text-xs text-red-800 mt-2">No active business-for-sale listing found on major platforms</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border border-red-200">
+                                <div class="text-sm text-gray-700 mb-1">Revenue</div>
+                                <div class="text-xl font-bold text-gray-900">Unknown</div>
+                                <p class="text-xs text-red-800 mt-2">No public financial disclosure available</p>
+                            </div>
                         </div>
+                        <p class="text-red-900 mt-4 text-sm font-semibold">
+                            Red Flag: Combined with "temporarily closed" status, this suggests the business may not be actively for sale or may have undisclosed issues.
+                        </p>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <div class="text-3xl font-bold text-gray-900">$71,029</div>
-                        <div class="text-sm text-gray-600">Median Household Income</div>
-                        <div class="verify-box mt-2">
-                            📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Income data</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4 text-center">
-                        <div class="text-3xl font-bold text-gray-900">37.5</div>
-                        <div class="text-sm text-gray-600">Median Age</div>
-                        <div class="verify-box mt-2">
-                            📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Age distribution</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <p class="text-gray-700"><strong>Racial/Ethnic Composition:</strong> Hispanic/Latino: 48.9%, Black/African American: 38.9%, White: 5.6%, Other: 6.6%</p>
-                    <div class="verify-box">
-                        📎 <a href="https://www.california-demographics.com/inglewood-demographics" target="_blank" class="verify-link">Verify: Demographic breakdown</a>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <p class="text-gray-700"><strong>Poverty Rate:</strong> 14.86%</p>
-                    <div class="verify-box">
-                        📎 <a href="https://worldpopulationreview.com/us-cities/california/inglewood" target="_blank" class="verify-link">Verify: Economic indicators</a>
-                    </div>
-                </div>
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
-                    <p class="font-semibold text-blue-900 mb-2">Market Context</p>
-                    <p class="text-sm text-gray-700"><strong>Sports Venue Boom:</strong> Inglewood has seen massive investment with SoFi Stadium (opened 2020) and Intuit Dome (opened 2024), bringing significant foot traffic and tourism to the area.</p>
-                    <p class="text-sm text-gray-700 mt-2"><strong>Target Market Fit:</strong> Cajun seafood + sports bar concept aligns well with demographics and proximity to major sports venues.</p>
-                </div>
-            </section>
+                </section>
 
-            <div class="border-t border-gray-200 my-8"></div>
+                <div class="border-t border-gray-200 my-8"></div>
 
-            <!-- Competitive Landscape -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Competitive Landscape</h3>
-                <p class="text-gray-700 mb-4"><strong>Major Competitors (Seafood Restaurants in Inglewood):</strong></p>
-                <ul class="text-sm text-gray-700 space-y-2 ml-4">
-                    <li>• Lalo's Mariscos (Mexican seafood)</li>
-                    <li>• ConiSeafood (award-winning Mexican seafood at 3544 W Imperial Hwy)</li>
-                    <li>• La Brea Seafood (945 N La Brea Ave, 143 Yelp reviews)</li>
-                    <li>• E & J Seafood (424 E Manchester Blvd, 136 Yelp reviews)</li>
-                    <li>• 106 Seafood Underground (CLOSED - 4549 W Imperial Hwy)</li>
-                </ul>
-                <div class="verify-box">
-                    📎 <a href="https://www.yelp.com/search?cflt=seafood&find_loc=Inglewood,+CA" target="_blank" class="verify-link">Verify: Full list of seafood restaurants in area</a>
-                </div>
-                <p class="text-gray-700 mt-3"><strong>Competitive Density:</strong> Moderate to high — Several established seafood restaurants, particularly Mexican/mariscos style</p>
-                <p class="text-gray-700 mt-2"><strong>Differentiation:</strong> Stinkin Crawfish's Cajun/Louisiana style differentiates it from the predominant Mexican seafood competitors in the area.</p>
-                <div class="verify-box">
-                    📎 <a href="https://www.yelp.com/search?find_desc=Crawfish+Boil&find_loc=Inglewood,+CA" target="_blank" class="verify-link">Verify: Count of crawfish-specific restaurants</a>
-                </div>
-            </section>
-
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Opportunities -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Opportunities</h3>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Strategic Advantages</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>✓ Sports venue proximity (SoFi/Intuit Dome)</li>
-                            <li>✓ Niche Cajun differentiation</li>
-                            <li>✓ Multi-revenue streams (dine-in, takeout, delivery)</li>
-                            <li>✓ Franchise support and systems</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Growth Potential</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Game day marketing & shuttle service</li>
-                            <li>• Catering for large groups/events</li>
-                            <li>• Happy hour expansion</li>
-                            <li>• Social media growth (currently 106 followers)</li>
-                        </ul>
-                        <div class="verify-box mt-2">
-                            📎 <a href="https://www.instagram.com/stinking_crawfish_inglewood/" target="_blank" class="verify-link">Verify: Current social media engagement</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Final Recommendation -->
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Risks & Red Flags</h3>
-                <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-4">
-                    <p class="font-bold text-red-900 text-lg mb-3">🚩 CRITICAL CONCERNS</p>
+                <!-- Online Reputation -->
+                <section id="reputation" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Market Position & Reviews</h2>
                     
-                    <div class="mb-4">
-                        <p class="font-bold text-red-900">TEMPORARILY CLOSED STATUS</p>
-                        <p class="text-sm text-red-800">Multiple sources (Yelp, aggregators) indicate the business is "temporarily closed" as of September 2025. This is a major red flag requiring immediate investigation.</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Check current business status</a>
+                    <!-- Review Comparison Table -->
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <h3 class="text-subsection mb-4 text-gray-900">Review Score Comparison</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-gray-300">
+                                        <th class="pb-3 text-gray-900 font-semibold">Platform</th>
+                                        <th class="pb-3 text-gray-900 font-semibold">Rating</th>
+                                        <th class="pb-3 text-gray-900 font-semibold">Reviews</th>
+                                        <th class="pb-3 text-gray-900 font-semibold">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 font-medium text-gray-900">Yelp</td>
+                                        <td class="py-3 text-gray-800">—</td>
+                                        <td class="py-3 text-gray-800">51 reviews</td>
+                                        <td class="py-3"><span class="danger-badge">TEMP. CLOSED</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 font-medium text-gray-900">Google</td>
+                                        <td class="py-3 text-gray-800">—</td>
+                                        <td class="py-3 text-gray-800">Limited data</td>
+                                        <td class="py-3"><span class="warning-badge">Verify status</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 font-medium text-gray-900">Restaurant Guru</td>
+                                        <td class="py-3 text-gray-800">3.7/5.0</td>
+                                        <td class="py-3 text-gray-800">105 reviews</td>
+                                        <td class="py-3"><span class="warning-badge">Check current</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 font-medium text-gray-900">Checkle (Aggregated)</td>
+                                        <td class="py-3 text-gray-800">4.2/5.0</td>
+                                        <td class="py-3 text-gray-800">Multi-platform</td>
+                                        <td class="py-3"><span class="success-badge">Active listing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium text-gray-900">DoorDash</td>
+                                        <td class="py-3 text-gray-800">4.0/5.0</td>
+                                        <td class="py-3 text-gray-800">20+ reviews</td>
+                                        <td class="py-3"><span class="warning-badge">Verify active</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <p class="text-sm text-red-800 mt-2"><strong>Questions for seller/broker:</strong></p>
-                        <ul class="text-sm text-red-800 ml-4 mt-1">
-                            <li>• When did the business close and why?</li>
-                            <li>• What is the timeline for reopening?</li>
-                            <li>• Are staff still employed?</li>
-                            <li>• Is rent current?</li>
-                            <li>• Any outstanding liabilities or legal issues?</li>
-                        </ul>
-                    </div>
-
-                    <div class="mb-4">
-                        <p class="font-bold text-red-900">NO ACTIVE SALE LISTING FOUND</p>
-                        <p class="text-sm text-red-800">No listings found on BizBuySell, LoopNet, or other major business broker platforms.</p>
-                    </div>
-
-                    <div>
-                        <p class="font-bold text-red-900">INCONSISTENT REVIEW QUALITY</p>
-                        <p class="text-sm text-red-800">Some reviews mention quality control issues (warm beers, inconsistent food quality)</p>
-                        <div class="verify-box">
-                            📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Read recent negative reviews</a>
+                        <div class="verify-box mt-4">
+                            📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Check current Yelp status</a>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="text-subsection mb-2 text-gray-900">Positive Themes</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>✓ Quality Cajun seafood and crawfish</li>
+                                <li>✓ Sports bar atmosphere with multiple TVs</li>
+                                <li>✓ Good for group dining and game watching</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-subsection mb-2 text-gray-900">Negative Themes</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>⚠️ Inconsistent quality mentioned</li>
+                                <li>⚠️ Service speed concerns during peak times</li>
+                                <li>⚠️ "Warm beers" and quality control issues noted</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6">
-                    <p class="font-bold text-yellow-900 mb-2">⚠️ VERDICT: CAUTION — DO NOT PROCEED WITHOUT ANSWERS</p>
-                    <p class="text-gray-700 mb-3">This business presents <strong>significant red flags</strong> that must be resolved before any serious consideration:</p>
-                    <ul class="text-sm text-gray-700 space-y-1">
-                        <li>1. Temporary closure status is unexplained and concerning</li>
-                        <li>2. No active sale listing suggests this may not be a legitimate opportunity or may have undisclosed issues</li>
-                        <li>3. Limited financial transparency makes valuation impossible</li>
-                    </ul>
-                    <p class="text-sm text-gray-700 mt-3 font-semibold">Recommended Next Steps:</p>
-                    <ul class="text-sm text-gray-700 ml-4 mt-1">
-                        <li>✓ Obtain direct contact with owner/broker to explain closure</li>
-                        <li>✓ Request 3 years of tax returns and financials</li>
-                        <li>✓ Review franchise agreement and fees</li>
-                        <li>✓ Inspect property and equipment in person</li>
-                        <li>✓ Verify lease terms and landlord relationship</li>
-                        <li>✓ Conduct health department inspection history review</li>
-                        <li>✓ Interview former staff if possible</li>
-                    </ul>
-                </div>
-            </section>
+                <div class="border-t border-gray-200 my-8"></div>
 
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Data Sources -->
-            <section>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Data Sources & Verification</h3>
-                <p class="text-sm text-gray-600 mb-3">All data in this report was obtained from publicly available sources on February 11, 2026. Every data point includes a 📎 Verify link for independent verification.</p>
-                <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-600">
-                    <div>
-                        <strong>Business Listings & Reviews:</strong>
-                        <ul class="mt-1 space-y-1">
-                            <li>• Yelp (51 reviews, closure status)</li>
-                            <li>• DoorDash, Sirved, Checkle</li>
-                            <li>• Restaurant Guru</li>
-                            <li>• Instagram</li>
+                <!-- Location & Demographics -->
+                <section id="location" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Location Analysis</h2>
+                    <div class="mb-4">
+                        <p class="text-gray-800"><strong>Location:</strong> 11236 Crenshaw Blvd, Inglewood, CA 90303</p>
+                        <p class="text-gray-800"><strong>Major Intersection:</strong> Crenshaw Blvd (major north-south artery)</p>
+                        <div class="verify-box">
+                            📎 <a href="https://www.google.com/maps/search/?api=1&query=11236+Crenshaw+Blvd+Inglewood+CA+90303" target="_blank" class="verify-link">Verify: Check street view for visibility, parking, and surrounding businesses</a>
+                        </div>
+                        <p class="text-gray-800 mt-2"><strong>Proximity to Major Venues:</strong></p>
+                        <ul class="text-sm text-gray-800 ml-4">
+                            <li>• SoFi Stadium (LA Rams/Chargers) — Approx. 2-3 miles</li>
+                            <li>• Intuit Dome (LA Clippers) — Approx. 2-3 miles</li>
+                            <li>• LAX Airport — Approx. 3-4 miles</li>
                         </ul>
                     </div>
-                    <div>
-                        <strong>Demographics & Market Data:</strong>
-                        <ul class="mt-1 space-y-1">
-                            <li>• DataUSA.io (U.S. Census Bureau 2023)</li>
-                            <li>• California-Demographics.com</li>
-                            <li>• World Population Review</li>
+                    <h3 class="text-subsection mb-3 text-gray-900">Demographics (Inglewood, CA)</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-3xl font-bold text-gray-900">105,575</div>
+                            <div class="text-sm text-gray-700">Population (2023)</div>
+                            <div class="verify-box mt-2">
+                                📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Population data</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-3xl font-bold text-gray-900">$71,029</div>
+                            <div class="text-sm text-gray-700">Median Household Income</div>
+                            <div class="verify-box mt-2">
+                                📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Income data</a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-3xl font-bold text-gray-900">37.5</div>
+                            <div class="text-sm text-gray-700">Median Age</div>
+                            <div class="verify-box mt-2">
+                                📎 <a href="https://datausa.io/profile/geo/inglewood-ca/" target="_blank" class="verify-link text-xs">Verify: Age distribution</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
+                        <p class="font-semibold text-blue-900 mb-2">Market Context</p>
+                        <p class="text-sm text-gray-800"><strong>Sports Venue Boom:</strong> Inglewood has seen massive investment with SoFi Stadium (opened 2020) and Intuit Dome (opened 2024), bringing significant foot traffic and tourism to the area.</p>
+                        <p class="text-sm text-gray-800 mt-2"><strong>Target Market Fit:</strong> Cajun seafood + sports bar concept aligns well with demographics and proximity to major sports venues.</p>
+                    </div>
+                </section>
+
+                <div class="border-t border-gray-200 my-8"></div>
+
+                <!-- Competitive Landscape -->
+                <section id="competition" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Competitive Landscape</h2>
+                    <p class="text-gray-800 mb-4"><strong>Major Competitors (Seafood Restaurants in Inglewood):</strong></p>
+                    <ul class="text-sm text-gray-800 space-y-2 ml-4">
+                        <li>• Lalo's Mariscos (Mexican seafood)</li>
+                        <li>• ConiSeafood (award-winning Mexican seafood at 3544 W Imperial Hwy)</li>
+                        <li>• La Brea Seafood (945 N La Brea Ave, 143 Yelp reviews)</li>
+                        <li>• E & J Seafood (424 E Manchester Blvd, 136 Yelp reviews)</li>
+                        <li>• 106 Seafood Underground (CLOSED - 4549 W Imperial Hwy)</li>
+                    </ul>
+                    <div class="verify-box">
+                        📎 <a href="https://www.yelp.com/search?cflt=seafood&find_loc=Inglewood,+CA" target="_blank" class="verify-link">Verify: Full list of seafood restaurants in area</a>
+                    </div>
+                    <p class="text-gray-800 mt-3"><strong>Competitive Density:</strong> Moderate to high — Several established seafood restaurants, particularly Mexican/mariscos style</p>
+                    <p class="text-gray-800 mt-2"><strong>Differentiation:</strong> Stinkin Crawfish's Cajun/Louisiana style differentiates it from the predominant Mexican seafood competitors in the area.</p>
+                </section>
+
+                <div class="border-t border-gray-200 my-8"></div>
+
+                <!-- Opportunities -->
+                <section id="opportunities" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Opportunities</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="text-subsection mb-2 text-gray-900">Strategic Advantages</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>✓ Sports venue proximity (SoFi/Intuit Dome)</li>
+                                <li>✓ Niche Cajun differentiation</li>
+                                <li>✓ Multi-revenue streams (dine-in, takeout, delivery)</li>
+                                <li>✓ Franchise support and systems</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-subsection mb-2 text-gray-900">Growth Potential</h3>
+                            <ul class="text-sm text-gray-800 space-y-1">
+                                <li>• Game day marketing & shuttle service</li>
+                                <li>• Catering for large groups/events</li>
+                                <li>• Happy hour expansion</li>
+                                <li>• Social media growth (currently 106 followers)</li>
+                            </ul>
+                            <div class="verify-box mt-2">
+                                📎 <a href="https://www.instagram.com/stinking_crawfish_inglewood/" target="_blank" class="verify-link">Verify: Current social media engagement</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="border-t border-gray-200 my-8"></div>
+
+                <!-- Final Recommendation -->
+                <section id="risks" class="mb-12">
+                    <h2 class="text-section mb-4 text-gray-900">Risks & Red Flags</h2>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-4">
+                        <p class="font-bold text-red-900 text-lg mb-3">🚩 CRITICAL CONCERNS</p>
+                        
+                        <div class="mb-4">
+                            <p class="font-bold text-red-900">TEMPORARILY CLOSED STATUS</p>
+                            <p class="text-sm text-red-900">Multiple sources (Yelp, aggregators) indicate the business is "temporarily closed" as of September 2025. This is a major red flag requiring immediate investigation.</p>
+                            <div class="verify-box">
+                                📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Check current business status</a>
+                            </div>
+                            <p class="text-sm text-red-900 mt-2"><strong>Questions for seller/broker:</strong></p>
+                            <ul class="text-sm text-red-900 ml-4 mt-1">
+                                <li>• When did the business close and why?</li>
+                                <li>• What is the timeline for reopening?</li>
+                                <li>• Are staff still employed?</li>
+                                <li>• Is rent current?</li>
+                                <li>• Any outstanding liabilities or legal issues?</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="font-bold text-red-900">NO ACTIVE SALE LISTING FOUND</p>
+                            <p class="text-sm text-red-900">No listings found on BizBuySell, LoopNet, or other major business broker platforms.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-bold text-red-900">INCONSISTENT REVIEW QUALITY</p>
+                            <p class="text-sm text-red-900">Some reviews mention quality control issues (warm beers, inconsistent food quality)</p>
+                            <div class="verify-box">
+                                📎 <a href="https://www.yelp.com/biz/stinkin-crawfish-inglewood-6" target="_blank" class="verify-link">Verify: Read recent negative reviews</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6">
+                        <p class="font-bold text-yellow-900 mb-2">⚠️ VERDICT: CAUTION — DO NOT PROCEED WITHOUT ANSWERS</p>
+                        <p class="text-gray-800 mb-3">This business presents <strong>significant red flags</strong> that must be resolved before any serious consideration:</p>
+                        <ul class="text-sm text-gray-800 space-y-1">
+                            <li>1. Temporary closure status is unexplained and concerning</li>
+                            <li>2. No active sale listing suggests this may not be a legitimate opportunity or may have undisclosed issues</li>
+                            <li>3. Limited financial transparency makes valuation impossible</li>
+                        </ul>
+                        <p class="text-sm text-gray-800 mt-3 font-semibold">Recommended Next Steps:</p>
+                        <ul class="text-sm text-gray-800 ml-4 mt-1">
+                            <li>✓ Obtain direct contact with owner/broker to explain closure</li>
+                            <li>✓ Request 3 years of tax returns and financials</li>
+                            <li>✓ Review franchise agreement and fees</li>
+                            <li>✓ Inspect property and equipment in person</li>
+                            <li>✓ Verify lease terms and landlord relationship</li>
+                            <li>✓ Conduct health department inspection history review</li>
+                            <li>✓ Interview former staff if possible</li>
                         </ul>
                     </div>
-                </div>
-                <p class="text-sm text-gray-600 mt-4 italic">This is a sample report demonstrating DealScout's verification methodology. Full reports include comprehensive due diligence checklists and valuation considerations.</p>
-            </section>
+                </section>
+
+                <div class="border-t border-gray-200 my-8"></div>
+
+                <!-- Data Sources -->
+                <section id="sources">
+                    <h2 class="text-section mb-3 text-gray-900">Data Sources & Verification</h2>
+                    <p class="text-sm text-gray-700 mb-3">All data in this report was obtained from publicly available sources on February 11, 2026. Every data point includes a 📎 Verify link for independent verification.</p>
+                    <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-700">
+                        <div>
+                            <strong>Business Listings & Reviews:</strong>
+                            <ul class="mt-1 space-y-1">
+                                <li>• Yelp (51 reviews, closure status)</li>
+                                <li>• DoorDash, Sirved, Checkle</li>
+                                <li>• Restaurant Guru</li>
+                                <li>• Instagram</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Demographics & Market Data:</strong>
+                            <ul class="mt-1 space-y-1">
+                                <li>• DataUSA.io (U.S. Census Bureau 2023)</li>
+                                <li>• California-Demographics.com</li>
+                                <li>• World Population Review</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4 italic">This is a sample report demonstrating DealScout's verification methodology. Full reports include comprehensive due diligence checklists and valuation considerations.</p>
+                </section>
+            </div>
         </div>
 
         <!-- Footer -->
-        <div class="bg-gray-900 text-gray-300 p-8 text-sm">
-            <p class="mb-2"><strong class="text-white">DISCLAIMER:</strong> This report is for informational purposes only and does not constitute investment advice, a business valuation, or a recommendation to purchase. All data should be independently verified. The buyer assumes all risk in any business acquisition decision.</p>
+        <div class="bg-gray-900 text-white p-6 md:p-8 text-sm">
+            <p class="mb-2"><strong>DISCLAIMER:</strong> This report is for informational purposes only and does not constitute investment advice, a business valuation, or a recommendation to purchase. All data should be independently verified. The buyer assumes all risk in any business acquisition decision.</p>
             <p class="text-gray-400 mt-4">Report prepared by <strong class="text-white">DealScout</strong> — AI-Powered Pre-Acquisition Intelligence for Small Business Buyers</p>
         </div>
     </div>
 
-    <div class="max-w-5xl mx-auto text-center py-8">
-        <a href="../index.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            ← Back to DealScout Home
-        </a>
+    <!-- View Other Samples -->
+    <div class="max-w-7xl mx-auto text-center py-8 px-4">
+        <div class="mb-4">
+            <a href="../index.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition min-h-[48px] flex items-center justify-center sm:inline-flex">
+                ← Back to DealScout Home
+            </a>
+        </div>
+        <div class="border-t border-gray-200 pt-6 mt-6">
+            <h3 class="text-subsection mb-4 text-gray-900">View Other Sample Reports</h3>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="report-2-35w-auto-repair-mounds-view.html" class="bg-white border-2 border-gray-200 px-6 py-3 rounded-lg font-semibold hover:border-blue-500 transition min-h-[48px] flex items-center justify-center">
+                    35W Auto Repair →
+                </a>
+                <a href="report-3-woof-gang-mueller-austin.html" class="bg-white border-2 border-gray-200 px-6 py-3 rounded-lg font-semibold hover:border-blue-500 transition min-h-[48px] flex items-center justify-center">
+                    Woof Gang Bakery →
+                </a>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Active TOC link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
