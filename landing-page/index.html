@@ -58,6 +58,7 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -213,7 +214,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <h1 class="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
-                        <span class="text-2xl">🎯</span>
+                        <i data-lucide="crosshair" style="width:20px;height:20px;display:inline-block;color:#2563eb"></i>
                         <span>DealScout</span>
                     </h1>
                 </div>
@@ -282,7 +283,7 @@
                 <div class="hidden lg:block mt-12 lg:mt-0">
                     <div class="product-mockup max-w-md mx-auto">
                         <div style="margin-top: 60px;">
-                            <div style="text-align: center; font-weight: 700; font-size: 20px; color: #1f2937; margin-bottom: 20px;">📊 DealScout Report</div>
+                            <div style="text-align: center; font-weight: 700; font-size: 20px; color: #1f2937; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px;"><i data-lucide="bar-chart-3" style="width:20px;height:20px;display:inline-block;color:#6366f1"></i> DealScout Report</div>
                             <div class="product-mockup-line"></div>
                             <div class="product-mockup-line medium"></div>
                             <div class="product-mockup-line short"></div>
@@ -303,7 +304,7 @@
             <div class="lg:hidden mt-12">
                 <div class="product-mockup max-w-sm mx-auto">
                     <div style="margin-top: 60px;">
-                        <div style="text-align: center; font-weight: 700; font-size: 18px; color: #1f2937; margin-bottom: 16px;">📊 DealScout Report</div>
+                        <div style="text-align: center; font-weight: 700; font-size: 18px; color: #1f2937; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;"><i data-lucide="bar-chart-3" style="width:18px;height:18px;display:inline-block;color:#6366f1"></i> DealScout Report</div>
                         <div class="product-mockup-line"></div>
                         <div class="product-mockup-line medium"></div>
                         <div class="product-mockup-line short"></div>
@@ -327,18 +328,18 @@
                 Why Business Buyers Need DealScout
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-gray-100">
-                    <div class="text-5xl mb-4">⚠️</div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift border border-gray-100">
+                    <div class="mb-4"><i data-lucide="alert-triangle" style="width:48px;height:48px;display:inline-block;color:#f59e0b"></i></div>
                     <h3 class="text-subsection mb-3 text-gray-900">Hidden Risks</h3>
                     <p class="text-gray-700 leading-relaxed">Seller's documents don't show declining reviews, competitive threats, or negative press coverage.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-gray-100">
-                    <div class="text-5xl mb-4">⏱️</div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift border border-gray-100">
+                    <div class="mb-4"><i data-lucide="clock" style="width:48px;height:48px;display:inline-block;color:#6366f1"></i></div>
                     <h3 class="text-subsection mb-3 text-gray-900">Hours of Research</h3>
                     <p class="text-gray-700 leading-relaxed">Manually checking Google Reviews, Yelp, BBB, competitors, demographics takes 10+ hours per business.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-gray-100">
-                    <div class="text-5xl mb-4">💸</div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift border border-gray-100">
+                    <div class="mb-4"><i data-lucide="dollar-sign" style="width:48px;height:48px;display:inline-block;color:#ef4444"></i></div>
                     <h3 class="text-subsection mb-3 text-gray-900">Expensive Mistakes</h3>
                     <p class="text-gray-700 leading-relaxed">Buying a business with reputation issues or fierce competition can cost you hundreds of thousands.</p>
                 </div>
@@ -388,7 +389,7 @@
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
                 <!-- Sample 1 -->
-                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-md">
                     <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8">
                         <h3 class="text-subsection mb-2">Stinkin Crawfish</h3>
                         <p class="text-orange-50">Cajun Restaurant • Inglewood, CA</p>
@@ -400,7 +401,7 @@
                         </div>
                         <div class="mb-6">
                             <div class="text-sm text-gray-600 mb-1 font-medium">Rating</div>
-                            <div class="text-xl font-semibold text-gray-900">⭐ 4.2/5</div>
+                            <div class="text-xl font-semibold text-gray-900 flex items-center gap-1"><i data-lucide="star" style="width:18px;height:18px;display:inline-block;color:#f59e0b;fill:#f59e0b"></i> 4.2/5</div>
                         </div>
                         <a href="sample-reports/report-1-stinkin-crawfish-inglewood.html" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3.5 rounded-lg font-semibold hover:bg-gray-800 transition-all min-h-[48px] flex items-center justify-center">
                             View Full Report →
@@ -409,7 +410,7 @@
                 </div>
 
                 <!-- Sample 2 -->
-                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-sm">
+                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-md">
                     <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-8">
                         <h3 class="text-subsection mb-2">35W Auto Repair & Wash</h3>
                         <p class="text-blue-50">Auto Service • Mounds View, MN</p>
@@ -430,7 +431,7 @@
                 </div>
 
                 <!-- Sample 3 -->
-                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-sm md:col-span-2 lg:col-span-1">
+                <div class="bg-white rounded-xl overflow-hidden hover-lift border border-gray-200 shadow-md md:col-span-2 lg:col-span-1">
                     <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white p-8">
                         <h3 class="text-subsection mb-2">Woof Gang Bakery</h3>
                         <p class="text-green-50">Pet Grooming • Austin, TX</p>
@@ -438,7 +439,7 @@
                     <div class="p-8">
                         <div class="mb-6">
                             <div class="text-sm text-gray-600 mb-1 font-medium">Rating</div>
-                            <div class="text-3xl font-bold text-gray-900">⭐ 4.8/5</div>
+                            <div class="text-3xl font-bold text-gray-900 flex items-center gap-2"><i data-lucide="star" style="width:28px;height:28px;display:inline-block;color:#f59e0b;fill:#f59e0b"></i> 4.8/5</div>
                         </div>
                         <div class="mb-6">
                             <div class="text-sm text-gray-600 mb-1 font-medium">Reviews</div>
@@ -461,42 +462,42 @@
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Reputation Analysis</h3>
                         <p class="text-gray-800">Google Reviews, Yelp, BBB ratings—sentiment trends, common complaints, response quality</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Competitive Landscape</h3>
                         <p class="text-gray-800">Who else is competing nearby, their ratings, market saturation analysis</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Demographics & Market</h3>
                         <p class="text-gray-800">Local population, income levels, age distribution, market fit assessment</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Risk Signals</h3>
                         <p class="text-gray-800">Recent negative press, declining review trends, operational red flags</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Customer Sentiment</h3>
                         <p class="text-gray-800">AI-powered analysis of what customers love and hate</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <div class="text-3xl flex-shrink-0">✅</div>
+                    <div class="flex-shrink-0"><i data-lucide="check-circle" style="width:32px;height:32px;display:inline-block;color:#10b981"></i></div>
                     <div>
                         <h3 class="text-subsection mb-2 text-gray-900">Executive Summary</h3>
                         <p class="text-gray-800">TL;DR verdict: Buy, Negotiate, or Walk Away—with reasoning</p>
@@ -521,27 +522,27 @@
                     </div>
                     <ul class="space-y-4 mb-8 text-gray-800">
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>2-3 page report</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>Basic reputation summary</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>Top 5 competitors</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>Key risk flags</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>Go / No-Go recommendation</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-green-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#10b981"></i></span>
                             <span>Delivered in 10 minutes</span>
                         </li>
                         <li class="flex gap-3 items-start text-gray-600">
@@ -557,8 +558,8 @@
                 <!-- Full Report -->
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-600 rounded-2xl p-8 relative hover-lift shadow-lg">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                            ⭐ RECOMMENDED
+                        <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                            <i data-lucide="star" style="width:14px;height:14px;display:inline-block;color:#ffffff;fill:#ffffff"></i> RECOMMENDED
                         </span>
                     </div>
                     <h3 class="text-subsection mb-3 text-gray-900">Full Report</h3>
@@ -568,27 +569,27 @@
                     </div>
                     <ul class="space-y-4 mb-8 text-gray-800">
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>8-12 page comprehensive report</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>Full reputation analysis</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>Complete competitive landscape</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>Demographics & market fit</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>Customer sentiment deep-dive</span>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <span class="text-blue-600 flex-shrink-0 mt-0.5">✓</span>
+                            <span class="flex-shrink-0 mt-0.5"><i data-lucide="check-circle" style="width:18px;height:18px;display:inline-block;color:#2563eb"></i></span>
                             <span>"What To Do Next" action plan</span>
                         </li>
                         <li class="flex gap-3 items-start text-gray-600">
@@ -700,7 +701,7 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-8">
                 <div>
                     <h4 class="text-white font-bold text-2xl mb-4 flex items-center gap-2">
-                        <span class="text-2xl">🎯</span>
+                        <i data-lucide="crosshair" style="width:24px;height:24px;display:inline-block;color:#ffffff"></i>
                         <span>DealScout</span>
                     </h4>
                     <p>AI-powered intelligence reports for business buyers.</p>
@@ -789,8 +790,9 @@
             submitForm({ formType: 'waitlist', email }, () => {
                 this.querySelector('input[type=email]').value = '';
                 const msg = document.getElementById('waitlist-msg');
-                msg.textContent = '✓ You\'re on the list! We\'ll email you when we launch.';
+                msg.innerHTML = '<i data-lucide="check-circle" style="width:16px;height:16px;display:inline-block;color:#86efac;margin-right:4px;vertical-align:middle"></i> You\'re on the list! We\'ll email you when we launch.';
                 msg.className = 'mt-4 text-green-300 font-semibold';
+                lucide.createIcons();
             });
         });
 
@@ -800,9 +802,11 @@
             const fd = Object.fromEntries(new FormData(this));
             fd.formType = 'order';
             submitForm(fd, () => {
-                this.innerHTML = '<div class="text-center py-8"><div class="text-5xl mb-4">🎯</div><h3 class="text-2xl font-bold mb-2 text-gray-900">Request received!</h3><p class="text-gray-700">We\'ll email you when your report is ready. No charge until then.</p></div>';
+                this.innerHTML = '<div class="text-center py-8"><div class="mb-4"><i data-lucide="crosshair" style="width:64px;height:64px;display:inline-block;color:#2563eb"></i></div><h3 class="text-2xl font-bold mb-2 text-gray-900">Request received!</h3><p class="text-gray-700">We\'ll email you when your report is ready. No charge until then.</p></div>';
+                lucide.createIcons();
             });
         });
     </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
